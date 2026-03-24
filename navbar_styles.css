@@ -1,0 +1,123 @@
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: rgb(60, 60, 60);
+}
+
+.logo img {
+  height: 200px;
+    width: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+    padding: 0;
+}
+
+.cta-button {
+  background: rgb(0, 0, 0);
+  color: white !important;
+  padding: 20px 60px;
+  border-radius: 5px;
+  border: white solid 2px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links a,
+.cta-button,
+.logo img {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.cta-button:hover,
+.cta-button:focus,
+.logo img:hover,
+.logo img:focus {
+  transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+nav ul {
+    background-color: var(--HEADER-BGCOLOR);
+    z-index: 1;
+    list-style-type: none;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+nav li {
+    padding: 0.1rem 1.5rem;
+    border-top: 1px solid var(--HEADER-COLOR);
+    color: whitesmoke;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: auto;
+}
+
+nav a:any-link {
+    color: var(--HEADER-COLOR);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.nav-links {
+    white-space: nowrap;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+        text-align: center;
+    }
+
+    .logo {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .cta-button {
+        order: 3;
+        margin-top: 10px;
+    }
+
+
+}
