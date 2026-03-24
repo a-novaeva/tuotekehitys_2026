@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo2.png" alt="Redemption Tones logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">References</a></li>
+            </ul>
+
+            <a href="#" class="cta-button">Contact us</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="box">
+            <h3>Contact us</h3>
+
+            <div id="msg">✅ Message sent!</div>
+
+            <form id="form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+
+        <script>
+        document.getElementById("form").onsubmit = function(e) {
+            e.preventDefault();
+
+            document.getElementById("msg").style.display = "block";
+            this.reset();
+        }
+        </script>
+    </main>
+
+</body>
+</html>
