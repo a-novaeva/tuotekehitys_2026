@@ -1,0 +1,257 @@
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(60, 60, 60);
+}
+
+header {
+    width: 100%;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cta-button {
+    background: rgb(0, 0, 0);
+    color: white !important;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border: white solid 2px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a,
+.cta-button,
+.logo img {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.cta-button:hover,
+.cta-button:focus,
+.logo img:hover,
+.logo img:focus {
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+nav ul {
+    background-color: var(--HEADER-BGCOLOR);
+    z-index: 1;
+    list-style-type: none;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+nav li {
+    padding: 0.1rem 0.5rem;
+    border-top: 1px solid var(--HEADER-COLOR);
+    color: whitesmoke;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: auto;
+}
+
+nav a:any-link {
+    color: var(--HEADER-COLOR);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.nav-links {
+    white-space: nowrap;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+        text-align: center;
+    }
+
+    .logo {
+        order: 1;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .cta-button {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+}
+
+main {
+    display: grid;
+    justify-items: center;
+    background-color: black;
+    color: white;
+    margin-top: 100px;
+}
+
+.image {
+    display: flex;
+    justify-items: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    height: 500px;
+    width: auto;
+}
+
+h1 {
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #000000;
+}
+
+.box {
+    background: rgb(123, 123, 123);
+    padding: 25px;
+    width: 350px;
+    border-radius: 0px;
+    box-shadow: 0 10px 25px rgba(58, 58, 58, 0.2);
+    margin-bottom: 100px;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+}
+
+input, textarea {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    width: 100%;
+    margin: 8px 0 12px;
+    padding: 5px;
+    border-radius: 0px;
+    border: 1px solid #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    border-color: #ffffff;
+    outline: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    background: #000000;
+    color: white;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 18px;
+}
+
+button:hover {
+    background: rgb(58, 58, 58);
+}
+
+#msg {
+    display: none;
+    text-align: center;
+    color: green;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 400px) {
+    .box {
+        width: 90%;
+    }
+}
