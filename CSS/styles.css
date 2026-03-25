@@ -140,6 +140,7 @@ main {
     background-color: black;
     color: white;
     margin-top: 100px;
+    flex: 1;
 }
 
 .image {
@@ -188,6 +189,7 @@ body {
     background: rgb(123, 123, 123);
     padding: 25px;
     width: 350px;
+    height: 350px;
     border-radius: 0px;
     box-shadow: 0 10px 25px rgba(58, 58, 58, 0.2);
     margin-bottom: 100px;
@@ -254,4 +256,63 @@ button:hover {
     .box {
         width: 90%;
     }
+}
+
+.footer {
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+    padding: 20px 0; 
+    margin-top: 50px;
+    border-top: 1px solid #1a1a1a; 
+}
+
+
+.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    margin-left: 0;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+}
+
+.footer-info {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+.footer-info a, .footer-links a {
+    color: #999;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-info a:hover, .footer-links a:hover {
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.footer-links li {
+    margin: 5px 0;
 }
