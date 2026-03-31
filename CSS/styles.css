@@ -458,3 +458,74 @@ button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
+
+/* ==========================================
+   HOME PAGE - PARTNERS SECTION 
+   ========================================== */
+
+main {
+    margin-top: 0 !important;
+    padding-top: 50px;
+}
+
+main h2 {
+    margin-bottom: 40px !important;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-divider {
+    width: 85%;
+    border: 0;
+    border-top: 1px solid #ffffff;
+    margin: 20px auto;
+}
+
+.partners {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 80px 40px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.logo-grid img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.logo-grid img:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 40px 20px;
+    }
+    
+    .section-divider {
+        width: 90%;
+    }
+}
