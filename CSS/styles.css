@@ -245,6 +245,7 @@ button:hover {
     background: rgb(58, 58, 58);
 }
 
+
 #msg {
     display: none;
     text-align: center;
@@ -542,6 +543,12 @@ button:hover {
     margin: 20px auto 60px;
     width: 60%;
 }
+
+.page-content .full-line {
+    width: 100%;
+    margin: 60px 0;
+}
+
 
 .cta-section {
     text-align: center;
