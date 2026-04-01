@@ -526,9 +526,6 @@ button:hover {
     width: 100%;
 }
 
-.page-content h1, .page-content h2, .page-content h3 {
-    font-family: 'Courier New', Courier, monospace;
-}
 
 .page-content p {
     color: #ccc;
