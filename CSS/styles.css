@@ -417,6 +417,7 @@ button:hover {
     align-items: center;
     gap: 10px;
 }
+/*erillisiet teippi-elementit, jotka voidaan sijoittaa erikseen
 .top-tape {
     transform: rotate(-1deg) translateX(-200px) translateY(-200px);
     margin-bottom: 15px;
@@ -426,7 +427,7 @@ button:hover {
 .bottom-tape {
     transform: rotate(0deg) translateX(300px) translateY(-250px);
     z-index: 1;
-}
+}*/
 
 .hero-container .button-wrapper {
     margin-top: 0;
