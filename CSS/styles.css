@@ -67,7 +67,7 @@ nav li {
     padding: 0.1rem 0.5rem;
     border-top: 1px solid var(--HEADER-COLOR);
     color: whitesmoke;
-    font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 25px;
 }
 
@@ -139,7 +139,8 @@ main {
     justify-items: center;
     background-color: black;
     color: white;
-    margin-top: 100px;
+    margin-top: 0px;
+    padding-top: 50px;
     flex: 1;
 }
 
@@ -151,6 +152,8 @@ main {
     height: 500px;
     width: auto;
 }
+
+
 
 h1 {
     font-size: 48px;
@@ -165,9 +168,10 @@ h2 {
     font-size: 30px;
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     padding: 20px;
     font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
     color: whitesmoke;
 }
 
@@ -339,7 +343,7 @@ button:hover {
 .about-page-content h1, 
 .about-page-content h2, 
 .about-page-content .number {
-    font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace !important;
 }
 
 .about-page-content .line {
@@ -357,7 +361,7 @@ button:hover {
 }
 
 .about-page-content h1 {
-    font-size: 48px;
+    font-size: 45px;
     margin: 0;
 }
 
@@ -367,7 +371,7 @@ button:hover {
 }
 
 .about-page-content h2 {
-    font-size: 30px !important;
+    font-size: 26px !important;
     text-align: left !important;
     margin: 40px 0 20px 0 !important;
     padding: 0 !important;
@@ -406,7 +410,7 @@ button:hover {
 }
 
 .about-page-content .label {
-    font-size: 18px !important;
+    font-size: 14px !important;
     color: #888 !important;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -458,18 +462,6 @@ button:hover {
 /* ==========================================
    HOME PAGE - PARTNERS SECTION 
    ========================================== */
-
-main {
-    margin-top: 0 !important;
-    padding-top: 50px;
-}
-
-main h2 {
-    margin-bottom: 40px !important;
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
 
 .section-divider {
     width: 85%;
@@ -582,9 +574,7 @@ main h2 {
     text-align: center;
 }
 
-.service-card2 h2 {
-    margin-bottom: 0px;
-}
+
 
 .service-card p {
     text-align: left;
