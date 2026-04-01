@@ -361,11 +361,6 @@ button:hover {
     height: 0;
 }
 
-.page-content .full-line {
-    width: 100%;
-    margin: 60px 0;
-}
-
 .page-content .short-line {
     width: 80px;
     margin: 10px auto 0;
@@ -518,7 +513,7 @@ button:hover {
 /* Layout resets for new pages */
 .page-content {
     max-width: 1000px;
-    margin: 80px auto;
+    margin: 20px auto;
     padding: 0 20px;
     width: 100%;
 }
@@ -548,7 +543,7 @@ button:hover {
 
 .cta-section {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 
 /* Services Grid */
