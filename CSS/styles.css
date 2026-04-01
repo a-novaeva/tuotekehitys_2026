@@ -5,7 +5,7 @@
     padding: 30px;
     width: 100%;
     box-sizing: border-box;
-    background-color: rgb(60, 60, 60);
+    background-color: #141414;
 }
 
 header {
@@ -153,14 +153,13 @@ main {
 }
 
 h1 {
-    font-size: 40px;
-    width: 100%; /* poista tää  */
+    font-size: 48px;
+    width: 100%;
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 100px; /* poista tää  */
-    padding: 20px; /* poista tää  */
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 30px;
+    margin-bottom: 100px;
+    padding: 20px;
+    font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h2 {
@@ -170,8 +169,7 @@ h2 {
     margin-top: 0px;
     margin-bottom: 100px;
     padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 25px;
+    font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: whitesmoke;
 }
 
@@ -271,7 +269,7 @@ button:hover {
 
 .footer {
     width: 100%;
-    background-color: rgba(58, 58, 58, 0.37);
+    background-color: #18181B;
     padding: 20px 0; 
     margin-top: 50px;
     border-top: 1px solid #1a1a1a; 
@@ -457,6 +455,77 @@ button:hover {
     border-color: white;
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================
+   HOME PAGE - PARTNERS SECTION 
+   ========================================== */
+
+main {
+    margin-top: 0 !important;
+    padding-top: 50px;
+}
+
+main h2 {
+    margin-bottom: 40px !important;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-divider {
+    width: 85%;
+    border: 0;
+    border-top: 1px solid #ffffff;
+    margin: 20px auto;
+}
+
+.partners {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #777;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-bottom: 60px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 80px 40px; 
+    align-items: center;
+    justify-items: center;
+}
+
+.logo-grid img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.logo-grid img:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 40px 20px;
+    }
+    
+    .section-divider {
+        width: 90%;
+    }
 }
 
 /* Layout resets for new pages */
