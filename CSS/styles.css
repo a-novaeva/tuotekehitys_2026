@@ -331,62 +331,45 @@ button:hover {
 /* ==========================================
    ABOUT PAGE
    ========================================== */
-.about-page-content {
+
+   .about-page-content {
     max-width: 850px;
     margin: 80px auto;
     padding: 0 20px;
-    display: block !important;
+    display: block;
     text-align: left;
     color: white;
 }
 
-.about-page-content h1, 
-.about-page-content h2, 
-.about-page-content .number {
-    font-family: 'Courier New', Courier, monospace !important;
+.page-content .line {
+    border: none;
+    border-top: 1.8px solid white;
+    height: 0;
 }
 
-.about-page-content .line {
-    border: none !important;
-    border-top: 1.8px solid white !important;
-    height: 0 !important;
+.page-content .full-line {
+    width: 100%;
+    margin: 60px 0;
+}
+
+.page-content .short-line {
+    width: 80px;
+    margin: 10px auto 0;
 }
 
 .about-page-content .hero-section {
-    text-align: center !important;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
 }
 
-.about-page-content h1 {
-    font-size: 45px;
-    margin: 0;
-}
-
-.about-page-content .short-line {
-    width: 80px;
-    margin: 10px auto 0 !important;
-}
-
-.about-page-content h2 {
-    font-size: 26px !important;
-    text-align: left !important;
-    margin: 40px 0 20px 0 !important;
-    padding: 0 !important;
-}
-
 .about-page-content p {
     color: #ccc;
     line-height: 1.6;
-    margin: 0 0 20px 0 !important;
-    padding: 0 !important;
-}
-
-.about-page-content .full-line {
-    width: 100%;
-    margin: 60px 0 !important;
+    margin: 0 0 20px 0;
+    padding: 0;
 }
 
 .about-page-content .stats-grid {
@@ -403,23 +386,23 @@ button:hover {
 }
 
 .about-page-content .number {
-    font-size: 55px !important;
+    font-size: 55px;
     font-weight: bold;
     line-height: 1;
     margin-bottom: 5px;
 }
 
 .about-page-content .label {
-    font-size: 14px !important;
-    color: #888 !important;
+    font-size: 14px;
+    color: #888;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .about-page-content .features-list {
     list-style: none;
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0;
+    margin: 0;
 }
 
 .about-page-content .features-list li {
@@ -446,7 +429,7 @@ button:hover {
     border: 1px solid #444;
     border-radius: 12px;
     background: linear-gradient(to bottom, #222, #000);
-    color: white !important;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
