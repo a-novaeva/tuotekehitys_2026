@@ -67,7 +67,7 @@ nav li {
     padding: 0.1rem 0.5rem;
     border-top: 1px solid var(--HEADER-COLOR);
     color: whitesmoke;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 25px;
 }
 
@@ -339,7 +339,7 @@ button:hover {
 .about-page-content h1, 
 .about-page-content h2, 
 .about-page-content .number {
-    font-family: 'Courier New', Courier, monospace !important;
+    font-family: 'Inconsolata', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .about-page-content .line {
@@ -357,7 +357,7 @@ button:hover {
 }
 
 .about-page-content h1 {
-    font-size: 45px;
+    font-size: 48px;
     margin: 0;
 }
 
@@ -367,7 +367,7 @@ button:hover {
 }
 
 .about-page-content h2 {
-    font-size: 26px !important;
+    font-size: 30px !important;
     text-align: left !important;
     margin: 40px 0 20px 0 !important;
     padding: 0 !important;
@@ -406,7 +406,7 @@ button:hover {
 }
 
 .about-page-content .label {
-    font-size: 14px !important;
+    font-size: 18px !important;
     color: #888 !important;
     text-transform: uppercase;
     letter-spacing: 2px;
