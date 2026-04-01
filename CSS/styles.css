@@ -401,9 +401,9 @@ button:hover {
 .index-page-content .hero-section {
     width: 100%;
     min-height: auto;
-    padding: 200px 0 100px 0;
+    padding: 300px 0 100px 0;
     background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.0)), 
-                url('/images/combichrist_mystic.jpg');
+                url('/images/hero_kuva.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -432,7 +432,7 @@ button:hover {
     margin-top: 0;
     display: flex;
     gap: 50px;
-    transform: rotate(0deg) translateY(-150px);
+    transform: rotate(0deg) translateY(20px);
 }
 
 .section-divider {
