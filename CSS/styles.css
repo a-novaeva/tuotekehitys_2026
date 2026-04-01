@@ -27,16 +27,29 @@ header {
 }
 
 .cta-button {
-    background: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 16px 45px;
+    border: 1px solid #444;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #222, #000);
     color: white !important;
-    padding: 20px 50px;
-    border-radius: 5px;
-    border: white solid 2px;
     text-decoration: none;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
     font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
+.cta-button:hover {
+    border-color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
 
 .nav-links a,
 .cta-button,
