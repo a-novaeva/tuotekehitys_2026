@@ -398,6 +398,12 @@ button:hover {
 /* ==========================================
    HOME PAGE
    ========================================== */
+.index-page-content .image {
+    width: 100%;
+    height: 650px;
+    justify-content: center;
+}
+
 .index-page-content .hero-section {
     width: 100%;
     min-height: auto;
@@ -483,15 +489,94 @@ button:hover {
 
 @media screen and (max-width: 768px) {
     .logo-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
     }
-    
+
     .section-divider {
         width: 90%;
     }
 }
 
+.gallery-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.gallery-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item {
+    flex: 0 0 25%;
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.gallery-pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #555;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ffffff;
+    width: 25px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 20px;
+        gap: 15px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-item {
+        flex: 0 0 75%;
+        max-width: 300px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        border-radius: 15px;
+    }
+
+    .gallery-pagination {
+        margin-top: 15px;
+    }
+}
 /* Layout resets for new pages */
 .page-content {
     max-width: 1000px;
