@@ -675,8 +675,11 @@ button:hover {
     border: 1px solid #444;
     padding: 10px 20px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 20px;
+    font-family: inconsolata, monospace;
     background-color: #0a0a0a;
+    width: 100px;
+    height: 25px;
 }
 
 /* Projects Grid */
