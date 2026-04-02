@@ -82,12 +82,6 @@
 
     </div>
 
-    <div class="gallery-pictures">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
     </section>
 
     <hr class="section-divider">
@@ -117,27 +111,6 @@
     <div class="lightbox" id="lightbox">
   <img src="" alt="">
 </div>
-<script>
-const container = document.querySelector('.gallery-container');
-const items = document.querySelectorAll('.gallery-item');
-const dots = document.querySelectorAll('.dot');
-
-let index = 0;
-
-function updateGallery() {
-  container.style.transform = `translateX(-${index * 100}%)`;
-
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
-
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    index = i;
-    updateGallery();
-  });
-});
-</script>
 <script>
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
