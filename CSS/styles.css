@@ -517,6 +517,8 @@ button:hover {
 .gallery-container {
     display: flex;
     gap: 20px;
+    transition: transform 0.5s ease;
+    will-change: transform;
     justify-content: center;
     align-items: center;
 }
@@ -554,6 +556,32 @@ button:hover {
     width: 25px;
     border-radius: 10px;
 }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 6px;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+  cursor: zoom-out;
+}
+
 
 @media screen and (max-width: 768px) {
     .gallery-container {

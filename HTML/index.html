@@ -114,6 +114,49 @@
             </div>
         </div>
     </footer>
+    <div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+<script>
+const container = document.querySelector('.gallery-container');
+const items = document.querySelectorAll('.gallery-item');
+const dots = document.querySelectorAll('.dot');
+
+let index = 0;
+
+function updateGallery() {
+  container.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    index = i;
+    updateGallery();
+  });
+});
+</script>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const galleryLinks = document.querySelectorAll('.gallery-link');
+
+galleryLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    lightboxImg.src = link.href;
+    lightbox.classList.add('active');
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+});
+</script>
+``
 </body>
 
 </html>
