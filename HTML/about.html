@@ -27,7 +27,7 @@
                 <li><a href="references.html">References</a></li>
             </ul>
 
-            <a href="contactform.html" class="cta-button">Contact us</a>
+            <a href="#contact-modal" class="cta-button">Contact us</a>
         </nav>
     </header>
 
@@ -85,7 +85,7 @@
         <h2>Want to work with us?</h2>
         <p>Let's discuss how we can make your next event unforgettable</p>
             <div class="button-wrapper">
-               <a href="contactform.html" class="cta-button">Contact us</a>
+               <a href="#contact-modal" class="cta-button">Contact us</a>
             </div>
     </section>
 
@@ -107,11 +107,97 @@
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Booking</a></li>
-                    <li><a href="contactform.html">Contact us</a></li>
+                    <li><a href="#contact-modal">Contact us</a></li>
                 </ul>
             </div>
         </div>
     </footer>
+
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-content">
+            <a href="#" class="modal-close">×</a>
+            <h2>Contact us</h2>
+            <p>Get in touch with Redemption Tones for professional live sound services.</p>
+
+            <form id="contact-form" novalidate>
+
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email*</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Message*</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" id="submit">Send Message</button>
+
+                <div id="msg" style="display:none; margin-top:25px; margin-bottom: 0; color:green; font-size: 20px;">
+                    Message sent!
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("contact-form");
+
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const message = document.getElementById("message");
+
+        [name, email, message].forEach(field => {
+            field.addEventListener("input", () => {
+                field.setCustomValidity("");
+            });
+        });
+
+        form.addEventListener("submit", function(e) {
+
+            if (name.value.trim() === "") {
+                name.setCustomValidity("Please enter your name.");
+            }
+
+            if (email.value.trim() === "") {
+            email.setCustomValidity("Please enter your email address.");
+        } else if (!email.value.includes("@")) {
+            email.setCustomValidity("Please include an '@' in the email address.");
+        } else if (!email.value.includes(".")) {
+            email.setCustomValidity("Please include a '.' in the email address.");
+        } else if (!email.validity.valid) {
+            email.setCustomValidity("Please enter a valid email address.");
+        }
+
+            if (message.value.trim() === "") {
+                message.setCustomValidity("Please enter your message.");
+            }
+
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                form.reportValidity();
+                return;
+            }
+
+            e.preventDefault();
+            document.getElementById("msg").style.display = "block";
+            form.reset();
+        });
+
+        document.querySelector(".modal-close").addEventListener("click", function() {
+            const form = document.getElementById("contact-form");
+
+            form.reset();
+
+            document.querySelectorAll("#contact-form input, #contact-form textarea")
+                .forEach(field => field.setCustomValidity(""));
+
+            document.getElementById("msg").style.display = "none";
+        });
+    </script>
+    
 </body>
 
 </html>
