@@ -36,8 +36,11 @@ a {
 .site-header,
 .header {
     width: 100%;
-    position: relative;
-    background: #0b0b0b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(11, 11, 11, 0.96);
 }
 
 .navbar {
