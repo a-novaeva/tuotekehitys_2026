@@ -11,134 +11,179 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <header class="header">
+    <header class="site-header">
         <nav class="navbar">
             <a href="index.html" class="logo">
                 <img src="/images/logo2.png" alt="Redemption Tones logo">
             </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="references.html" class="active">References</a></li>
             </ul>
-            <a href="#contact-modal" class="cta-button">Contact us</a>
+
+            <a href="#contact-modal" class="cta-button nav-cta">Contact us</a>
+
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="services.html">Services</a>
+            <a href="references.html" class="active">References</a>
+            <a href="#contact-modal" class="cta-button mobile-cta">Contact us</a>
+        </div>
     </header>
 
-    <main>
-        <main class="page-content">
-    <section class="hero-section">
-        <h1>Our Work</h1>
-        <p>A showcase of our recent projects with artists and events across Europe</p>
-        <div class="line short-line"></div>
-    </section>
+    <main class="page-content references-page">
+        <section class="page-hero">
+            <h1>Our Work</h1>
+            <p class="page-hero-text">A showcase of our recent projects with artists and events across Europe</p>
+            <div class="short-line"></div>
+        </section>
 
-    <section class="projects-grid">
-        <div class="project-card">
-            <div class="project-image-placeholder"></div>
-            <div class="project-info">
-                <span class="project-meta">2025 | Tuska Festival</span>
-                <h3>Mokoma - Tuska Mainstage</h3>
-                <p>Main stage FOH and monitor engineering for Finnish metal legends at one of Europe's largest music festivals.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-image-placeholder"></div>
-            <div class="project-info">
-                <span class="project-meta">2025 | Summer Breeze Festival</span>
-                <h3>Lordi - Summer Breeze Mainstage</h3>
-                <p>Complete touring production support including equipment rental and technical crew for the Eurovision winners.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-image-placeholder"></div>
-            <div class="project-info">
-                <span class="project-meta">0000 | Lorem Ipsum</span>
-                <h3>Lorem Ipsum - Dolor Sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-image-placeholder"></div>
-            <div class="project-info">
-                <span class="project-meta">0000 | Lorem Ipsum</span>
-                <h3>Lorem Ipsum - Dolor Sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-image-placeholder"></div>
-            <div class="project-info">
-                <span class="project-meta">0000 | Lorem Ipsum</span>
-                <h3>Lorem Ipsum - Dolor Sit</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
-            </div>
-        </div>
-    </section>
+        <section class="projects-grid">
+            <article class="project-card">
+                <img src="/images/mokoma_tuska.jpg" alt="Mokoma - Tuska Mainstage">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>2025</span>
+                        <span>Tuska Festival</span>
+                    </div>
+                    <h3>Mokoma - Tuska Mainstage</h3>
+                    <p>Main stage FOH and monitor engineering for Finnish metal legends at one of Europe’s largest metal festivals.</p>
+                </div>
+            </article>
 
-    <div class="line full-line"></div>
+            <article class="project-card">
+                <img src="/images/lordi_summer_breeze.jpg" alt="Lordi - Summer Breeze Mainstage">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>2025</span>
+                        <span>Summer Breeze Festival</span>
+                    </div>
+                    <h3>Lordi - Summer Breeze Mainstage</h3>
+                    <p>Complete touring production support including equipment rental and technical crew for large-scale festival performance.</p>
+                </div>
+            </article>
 
-    <section class="logos-section">
-        <h2>Trusted by leading artists</h2>
-        <p>We've had the privilge to work with some of the biggest names in the industry</p>
-        <div class="logos-grid">
-            <div class="logo-box">Logo 1</div>
-            <div class="logo-box">Logo 2</div>
-            <div class="logo-box">Logo 3</div>
-            <div class="logo-box">Logo 4</div>
-            <div class="logo-box">Logo 5</div>
-            <div class="logo-box">Logo 6</div>
-        </div>
-    </section>
+            <article class="project-card">
+                <img src="/images/combichrist_mystic.jpg" alt="Combichrist - Mystic Festival, Gdansk">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Mystic Festival</span>
+                    </div>
+                    <h3>Combichrist - Mystic Festival, Gdansk</h3>
+                    <p>Live audio production for an international industrial metal act at one of Poland’s premier festivals.</p>
+                </div>
+            </article>
 
-    <section class="stats-section box-stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="number">00+</span>
-                <span class="label">Lorem Ipsum</span>
+            <article class="project-card">
+                <img src="/images/combichrist_wave_gottik.jpg" alt="Combichrist - Wave Gotik Treffen, Leipzig">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>Wave-Gotik-Treffen</span>
+                    </div>
+                    <h3>Combichrist - Wave Gotik Treffen, Leipzig</h3>
+                    <p>Technical support for one of the world’s largest gothic and dark wave festivals in Germany.</p>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="/images/bloodwhite_madrid.jpg" alt="Blood White - Madrid">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>2024</span>
+                        <span>La Riviera</span>
+                    </div>
+                    <h3>Blood White - Madrid</h3>
+                    <p>Full audio package and crew support for an industrial rock tour date in Southern Europe.</p>
+                </div>
+            </article>
+        </section>
+
+        <div class="line full-line"></div>
+
+        <section class="logos-section">
+            <h2>Trusted by leading artists</h2>
+            <p>We’ve had the privilege to work with some of the biggest names in music</p>
+
+            <div class="logos-grid">
+                <div class="logo-box"><img src="/images/lordilogo.png" alt="Lordi"></div>
+                <div class="logo-box"><img src="/images/mokomalogo.png" alt="Mokoma"></div>
+                <div class="logo-box"><img src="/images/combichristlogo.png" alt="Combichrist"></div>
+                <div class="logo-box"><img src="/images/bloodwhitelogo.png" alt="Blood White"></div>
+                <div class="logo-box"><img src="/images/nooralogo.png" alt="Noora Louhimo"></div>
+                <div class="logo-box"><img src="/images/uniklubilogo.png" alt="Uniklubi"></div>
             </div>
-            <div class="stat-item">
-                <span class="number">00+</span>
-                <span class="label">Dolor Sit</span>
-            </div>
-            <div class="stat-item">
-                <span class="number">00+</span>
-                <span class="label">Amet Consectetur</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="line full-line"></div>
+        <section class="stats-section box-stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10K+</h3>
+                    <p>Events Delivered</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Artists &amp; Bands</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Countries</p>
+                </div>
+            </div>
+        </section>
 
-    <section class="cta-section">
-        <h2>Want to work with us?</h2>
-        <p>Let's discuss how we can make your next event unforgettable</p>
+        <div class="line full-line"></div>
+
+        <section class="cta-section">
+            <h2>Want to work with us?</h2>
+            <p>Let’s discuss how we can make your next event unforgettable</p>
             <div class="button-wrapper">
-               <a href="#contact-modal" class="cta-button">Contact us</a>
+                <a href="#contact-modal" class="cta-button">Get in Touch</a>
             </div>
-    </section>
-<div class="line full-line"></div>
-</main>
-        </main>
+        </section>
+
+        <div class="line full-line"></div>
+    </main>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
                 <img src="/images/logo2.png" alt="Redemption Tones">
             </div>
+
             <div class="footer-info">
                 <p><strong>Redemption Tones</strong></p>
                 <p><a href="mailto:hello@redemptiontones.com">hello@redemptiontones.com</a></p>
                 <p><a href="https://redemptiontones.com">redemptiontones.com</a></p>
             </div>
+
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Booking</a></li>
                     <li><a href="#contact-modal">Contact us</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Redemption Tones. All rights reserved.</p>
         </div>
     </footer>
 
@@ -149,7 +194,6 @@
             <p>Get in touch with Redemption Tones for professional live sound services.</p>
 
             <form id="contact-form" novalidate>
-
                 <label for="name">Name*</label>
                 <input type="text" id="name" name="name" required>
 
@@ -164,16 +208,21 @@
 
                 <button type="submit" id="submit">Send Message</button>
 
-                <div id="msg" style="display:none; margin-top:25px; margin-bottom: 0; color:green; font-size: 20px;">
-                    Message sent!
-                </div>
+                <div id="msg">Message sent!</div>
             </form>
         </div>
     </div>
 
     <script>
-        const form = document.getElementById("contact-form");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
 
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        const form = document.getElementById("contact-form");
         const name = document.getElementById("name");
         const email = document.getElementById("email");
         const message = document.getElementById("message");
@@ -185,20 +234,19 @@
         });
 
         form.addEventListener("submit", function(e) {
-
             if (name.value.trim() === "") {
                 name.setCustomValidity("Please enter your name.");
             }
 
             if (email.value.trim() === "") {
-            email.setCustomValidity("Please enter your email address.");
-        } else if (!email.value.includes("@")) {
-            email.setCustomValidity("Please include an '@' in the email address.");
-        } else if (!email.value.includes(".")) {
-            email.setCustomValidity("Please include a '.' in the email address.");
-        } else if (!email.validity.valid) {
-            email.setCustomValidity("Please enter a valid email address.");
-        }
+                email.setCustomValidity("Please enter your email address.");
+            } else if (!email.value.includes("@")) {
+                email.setCustomValidity("Please include an '@' in the email address.");
+            } else if (!email.value.includes(".")) {
+                email.setCustomValidity("Please include a '.' in the email address.");
+            } else if (!email.validity.valid) {
+                email.setCustomValidity("Please enter a valid email address.");
+            }
 
             if (message.value.trim() === "") {
                 message.setCustomValidity("Please enter your message.");
@@ -216,16 +264,11 @@
         });
 
         document.querySelector(".modal-close").addEventListener("click", function() {
-            const form = document.getElementById("contact-form");
-
             form.reset();
-
             document.querySelectorAll("#contact-form input, #contact-form textarea")
                 .forEach(field => field.setCustomValidity(""));
-
             document.getElementById("msg").style.display = "none";
         });
     </script>
-
 </body>
 </html>
