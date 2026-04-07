@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
-    <header class="header">
+    <header class="site-header">
         <nav class="navbar">
-
             <a href="index.html" class="logo">
                 <img src="/images/logo2.png" alt="Redemption Tones logo">
             </a>
@@ -27,29 +24,59 @@
                 <li><a href="references.html">References</a></li>
             </ul>
 
-            <a href="#contact-modal" class="cta-button">Contact us</a>
+            <a href="#contact-modal" class="cta-button nav-cta">Contact us</a>
+
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About us</a>
+            <a href="services.html">Services</a>
+            <a href="references.html">References</a>
+            <a href="#contact-modal" class="cta-button mobile-cta">Contact us</a>
+        </div>
     </header>
 
-    <main class="page-content">
-    <section class="hero-section">
-        <h1>About us</h1>
-        <div class="line short-line"></div>
-    </section>
+    <main class="page-content about-page">
+        <section class="page-hero">
+            <h1>About Us</h1>
+            <div class="short-line"></div>
+        </section>
 
-    <section class="left-text-section">
-        <h2 class="h2-left">Lorem Ipsum Dolor</h2>
-            <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section class="text-section">
+            <h2 class="h2-left">Who We Are</h2>
+            <p class="text-left">
+                Redemption Tones is a professional live sound and rental company specializing in touring production,
+                festival sound engineering, and event audio solutions. With years of experience in the industry,
+                we've worked with some of the biggest names in music across Europe.
+            </p>
+            <p class="text-left">
+                Our team of expert sound engineers and technicians are passionate about delivering exceptional audio
+                experiences, whether it's an intimate club show or a massive festival main stage.
+            </p>
 
-            <h2 class="h2-left">Consectetur Adipiscing</h2>
-            <p class="text-left">Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Pretium nibh ipsum consequat nisl vel pretium lectus quam id.</p>
-    </section>
+            <h2 class="h2-left">Our Mission</h2>
+            <p class="text-left">
+                We believe that great sound is the foundation of any memorable live performance. Our mission is to
+                provide artists, bands, and event organizers with world-class audio equipment and technical expertise
+                that brings their vision to life. We're committed to excellence, reliability, and innovation in
+                everything we do.
+            </p>
+        </section>
 
-    <div class="line full-line"></div>
-        
-    <section class="experience">
-        <h1>Our Experience</h1>
+        <div class="line full-line"></div>
+
+        <section class="experience">
+            <h2 class="h2-left">Our Experience</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <h3>50+</h3>
@@ -64,34 +91,32 @@
                     <p>Years</p>
                 </div>
             </div>
-    </section>
+        </section>
 
-    <div class="line full-line"></div>
+        <div class="line full-line"></div>
 
-    <section class="left-text-section">
-        <h2>Why Choose Us</h2>
+        <section class="text-section">
+            <h2 class="h2-left">Why Choose Us</h2>
             <ul class="features">
-                <p></p><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li></p>
-                <p><li>Sed do eiusmod tempor incididunt ut labore et dolore</li></p>
-                <p><li>Ut enim ad minim veniam, quis nostrud exercitation</li></p>
-                <p><li>Ullamco laboris nisi ut aliquip ex ea commodo consequat</li></p>
-                <p><li>Duis aute irure dolor in reprehenderit in voluptate velit</li></p>
+                <li>Professional-grade equipment from industry-leading manufacturers</li>
+                <li>Experienced sound engineers and technicians</li>
+                <li>Flexible rental packages tailored to your needs</li>
+                <li>Comprehensive logistics and tour support</li>
             </ul>
-    </section>
+        </section>
 
-    <div class="line full-line"></div>
+        <div class="line full-line"></div>
 
-    <section class="cta-section">
-        <h2>Want to work with us?</h2>
-        <p>Let's discuss how we can make your next event unforgettable</p>
+        <section class="cta-section">
+            <h2>Want to work with us?</h2>
+            <p>Let's discuss how we can make your next event unforgettable</p>
             <div class="button-wrapper">
-               <a href="#contact-modal" class="cta-button">Contact us</a>
+                <a href="#contact-modal" class="cta-button">Get in Touch</a>
             </div>
-    </section>
+        </section>
+    </main>
 
-</main>
-
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
                 <img src="/images/logo2.png" alt="Redemption Tones">
@@ -105,11 +130,15 @@
 
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Booking</a></li>
                     <li><a href="#contact-modal">Contact us</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Redemption Tones. All rights reserved.</p>
         </div>
     </footer>
 
@@ -120,7 +149,6 @@
             <p>Get in touch with Redemption Tones for professional live sound services.</p>
 
             <form id="contact-form" novalidate>
-
                 <label for="name">Name*</label>
                 <input type="text" id="name" name="name" required>
 
@@ -135,16 +163,21 @@
 
                 <button type="submit" id="submit">Send Message</button>
 
-                <div id="msg" style="display:none; margin-top:25px; margin-bottom: 0; color:green; font-size: 20px;">
-                    Message sent!
-                </div>
+                <div id="msg">Message sent!</div>
             </form>
         </div>
     </div>
 
     <script>
-        const form = document.getElementById("contact-form");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
 
+        menuToggle.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        const form = document.getElementById("contact-form");
         const name = document.getElementById("name");
         const email = document.getElementById("email");
         const message = document.getElementById("message");
@@ -156,20 +189,19 @@
         });
 
         form.addEventListener("submit", function(e) {
-
             if (name.value.trim() === "") {
                 name.setCustomValidity("Please enter your name.");
             }
 
             if (email.value.trim() === "") {
-            email.setCustomValidity("Please enter your email address.");
-        } else if (!email.value.includes("@")) {
-            email.setCustomValidity("Please include an '@' in the email address.");
-        } else if (!email.value.includes(".")) {
-            email.setCustomValidity("Please include a '.' in the email address.");
-        } else if (!email.validity.valid) {
-            email.setCustomValidity("Please enter a valid email address.");
-        }
+                email.setCustomValidity("Please enter your email address.");
+            } else if (!email.value.includes("@")) {
+                email.setCustomValidity("Please include an '@' in the email address.");
+            } else if (!email.value.includes(".")) {
+                email.setCustomValidity("Please include a '.' in the email address.");
+            } else if (!email.validity.valid) {
+                email.setCustomValidity("Please enter a valid email address.");
+            }
 
             if (message.value.trim() === "") {
                 message.setCustomValidity("Please enter your message.");
@@ -187,17 +219,11 @@
         });
 
         document.querySelector(".modal-close").addEventListener("click", function() {
-            const form = document.getElementById("contact-form");
-
             form.reset();
-
             document.querySelectorAll("#contact-form input, #contact-form textarea")
                 .forEach(field => field.setCustomValidity(""));
-
             document.getElementById("msg").style.display = "none";
         });
     </script>
-    
 </body>
-
 </html>

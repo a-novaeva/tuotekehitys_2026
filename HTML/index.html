@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="site-header">
         <nav class="navbar">
 
             <a href="index.html" class="logo">
@@ -27,11 +27,31 @@
                 <li><a href="references.html">References</a></li>
             </ul>
 
-            <a href="#contact-modal" class="cta-button">Contact us</a>
+            <a href="#contact-modal" class="cta-button nav-cta">Contact us</a>
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="references.html">References</a>
+            <a href="#contact-modal" class="cta-button mobile-cta">Contact us</a>
+        </div>
     </header>
 
+
     <main class="index-page-content">
+        
         <a href="index.html" class="image">
         <img src="/images/etusivu_logo.png" alt="Redemption Tones logo">
         </a>
@@ -44,9 +64,12 @@
             </div>
             </div>
         </section>
+        
+        
         <hr class="section-divider">
         <section class="partners">
         <p class="section-title">trusted by artists & events</p>
+
         <div class="logo-grid">
             <img src="/images/lordilogo.png" alt="Lordi">
             <img src="/images/mokomalogo.png" alt="Mokoma">
@@ -55,37 +78,58 @@
             <img src="/images/nooralogo.png" alt="Noora Louhimo">
         </div>
         </section>
+
         <hr class="section-divider">
         <section class="gallery-section">
-    <div class="gallery-container">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <a href="/images/mokoma_tuska.jpg" class="gallery-link">
+                        <img src="/images/mokoma_tuska.jpg" alt="">
+                        <span class="gallery-caption">Mokoma - Tuska Mainstage</span>
+                    </a>
+                </div>
 
-        <div class="gallery-item">
-            <a href="/images/mokoma_tuska.jpg" class="gallery-link">
-                <img src="/images/mokoma_tuska.jpg" alt="">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="/images/lordi_summer_breeze.jpg" class="gallery-link">
-                <img src="/images/lordi_summer_breeze.jpg" alt="">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="/images/combichrist_mystic.jpg" class="gallery-link">
-                <img src="/images/combichrist_mystic.jpg" alt="">
-            </a>
-        </div>
-        <div class="gallery-item">
-            <a href="/images/combichrist_wave_gottik.jpg" class="gallery-link">
-                <img src="/images/combichrist_wave_gottik.jpg" alt="">
-            </a>
-        </div>
+                <div class="gallery-item">
+                    <a href="/images/lordi_summer_breeze.jpg" class="gallery-link">
+                        <img src="/images/lordi_summer_breeze.jpg" alt="">
+                        <span class="gallery-caption">Lordi - Summer Breeze Mainstage</span>
+                    </a>
+                </div>
 
-    </div>
+                <div class="gallery-item">
+                    <a href="/images/combichrist_mystic.jpg" class="gallery-link">
+                        <img src="/images/combichrist_mystic.jpg" alt="">
+                        <span class="gallery-caption">Combichrist - Mystic Festival, Gdansk</span>
+                    </a>
+                </div>
 
-    </section>
+                <div class="gallery-item">
+                    <a href="/images/combichrist_wave_gottik.jpg" class="gallery-link">
+                        <img src="/images/combichrist_wave_gottik.jpg" alt="">
+                        <span class="gallery-caption">Combichrist - Wave Gotik Treffen, Leipzig</span>
+                    </a>
+                </div>
 
-    <hr class="section-divider">
+                <div class="gallery-item">
+                    <a href="/images/blood_white_madrid.jpg" class="gallery-link" data-caption="Blood White - Madrid">
+                        <img src="/images/bloodwhite_madrid.jpg" alt="Blood White - Madrid" />
+                        <span class="gallery-caption">Blood White - Madrid</span>
+                    </a>
+                </div>
+            </div>
+            <div class="gallery-pagination">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+
+        <hr class="section-divider">
     </main>
+
 
     <footer class="footer">
         <div class="footer-container">
@@ -107,7 +151,12 @@
                 </ul>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>© 2026 Redemption Tones. All rights reserved.</p>
+        </div>
     </footer>
+
+
     <div class="lightbox" id="lightbox">
   <img src="" alt="">
 </div>
