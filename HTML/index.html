@@ -46,16 +46,16 @@
         </div>
     </header>
 
-    <main class="index-page-content">
+    <main class="index-page-content reveal">
         <section class="logo-hero">
             <img src="/images/etusivu_logo.png" alt="Redemption Tones logo">
-            <p class="hero-subtitle">LIVE AUDIO / TOURING / RENTAL</p>
+            
         </section>
 
         <hr class="section-divider">
 
-        <section class="hero-section">
-            <div class="hero-container">
+        <section class="hero-section reveal">
+            <div class="hero-container reveal">
                 <img
                     src="/images/hero_kuva.png"
                     alt="Professional live sound and rental gear for bands, tours and events">
@@ -69,24 +69,28 @@
 
         <hr class="section-divider">
 
-        <section class="partners">
-            <p class="section-title">trusted by artists &amp; events</p>
+        <section class="logo-marquee-section reveal">
+            <p class="logo-section-title">trusted by artists &amp; events</p>
 
-            <div class="logo-grid">
-                <img src="/images/lordilogo.png" alt="Lordi">
-                <img src="/images/mokomalogo.png" alt="Mokoma">
-                <img src="/images/combichristlogo.png" alt="Combichrist">
-                <img src="/images/kelalogo.png" alt="Kela">
-                <img src="/images/bloodwhitelogo.png" alt="Blood White">
-                <img src="/images/nooralogo.png" alt="Noora Louhimo">
-                <img src="/images/huoralogo.png" alt="Huora">
-                <img src="/images/uniklubilogo.png" alt="Uniklubi">
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <img src="/images/bloodwhitelogo.png" alt="Blood White">
+                    <img src="/images/nooralogo.png" alt="Noora Louhimo">
+                    <img src="/images/huoralogo.png" alt="Huora">
+                    <img src="/images/uniklubilogo.png" alt="Uniklubi">
+
+                    <!-- duplicate same logos again -->
+                    <img src="/images/bloodwhitelogo.png" alt="Blood White">
+                    <img src="/images/nooralogo.png" alt="Noora Louhimo">
+                    <img src="/images/huoralogo.png" alt="Huora">
+                    <img src="/images/uniklubilogo.png" alt="Uniklubi">
+                </div>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <section class="gallery-section">
+        <section class="gallery-section reveal">
             <div class="gallery-container">
                 <div class="gallery-item">
                     <a href="/images/mokoma_tuska.jpg" class="gallery-link">
@@ -143,7 +147,7 @@
             </div>
 
             <div class="footer-info">
-                <p><strong>Redemption Tones Ogl</strong></p>
+                <p><strong>Redemption Tones</strong></p>
                 <p><a href="mailto:hello@redemptiontones.com">hello@redemptiontones.com</a></p>
                 <p><a href="https://redemptiontones.com">redemptiontones.com</a></p>
             </div>
@@ -193,6 +197,19 @@
     </div>
 
     <script>
+
+        const revealItems = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+  revealItems.forEach((item) => observer.observe(item));
+
         const menuToggle = document.querySelector(".menu-toggle");
         const mobileMenu = document.querySelector(".mobile-menu");
 

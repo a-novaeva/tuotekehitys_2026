@@ -316,39 +316,72 @@ main {
     height: auto;
 }
 
-.partners {
-    width: 100%;
-    max-width: 1300px;
-    text-align: center;
-    padding: 10px 20px 50px;
-    margin: 0 auto;
+/* logo section */
+
+.logo-section-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+.logo-marquee-section {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+  text-align: center;
 }
 
-.section-title {
-    margin: 0 0 56px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 28px;
-    letter-spacing: 0.18em;
-    color: #f2f2f2;
-    text-transform: none;
-    text-align: center;
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px 60px;
-    align-items: center;
-    justify-items: center;
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  width: max-content;
+  animation: scrollLogos 18s linear infinite;
 }
 
-.logo-grid img {
-    width: auto;
-    max-width: 150px;
-    max-height: 70px;
-    height: auto;
-    opacity: 1;
+.logo-track img {
+  height: 60px;
+  width: auto;
+  flex-shrink: 0;
 }
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee::before,
+.logo-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+.logo-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #000, transparent);
+}
+
+/* gallery section */
 
 .gallery-section {
     width: 100%;
@@ -623,17 +656,26 @@ main {
 }
 
 .project-card {
-    background: #141414;
-    border: 1px solid #2c2c2c;
-    border-radius: 18px;
-    overflow: hidden;
+  background: #141414;
+  border: 1px solid #2c2c2c;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.05);
 }
 
 .project-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.05);
 }
 
 .project-info {
@@ -947,6 +989,18 @@ button:hover {
 .modal-content button {
     width: 100%;
     margin-top: 5px;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
