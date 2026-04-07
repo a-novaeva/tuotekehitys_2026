@@ -13,8 +13,8 @@ header {
 }
 
 .logo img {
-    height: 100px;
-    width: auto;
+    height: 60px;
+    width: 130px;
 }
 
 .nav-links {
@@ -85,8 +85,8 @@ nav li {
     padding: 0.1rem 0.5rem;
     border-top: 1px solid var(--HEADER-COLOR);
     color: whitesmoke;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 25px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 22px;
 }
 
 nav a {
@@ -112,6 +112,13 @@ nav a:any-link {
     flex: 1;
     justify-content: center;
 }
+
+.nav-links a.active {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    color: #fff;
+}
+
 
 @media screen and (max-width: 768px) {
     .navbar {
