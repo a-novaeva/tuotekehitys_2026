@@ -670,7 +670,6 @@ button:hover {
 }
 
 
-
 .service-card p {
     text-align: left;
     font-size: 14px;
@@ -803,6 +802,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     z-index: 99999;
+    padding: 10px;
 }
 
 .modal-overlay:target {
@@ -815,8 +815,9 @@ button:hover {
 }
 
 .modal-content {
+    box-sizing: border-box;
     background: #141414;
-    padding: 3rem;
+    padding: 2rem;
     max-width: 500px;
     width: 100%;
     margin: auto;
@@ -849,7 +850,7 @@ button:hover {
 }
 
 .modal-content p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: lighter;
     margin-bottom: 28px;
 }
@@ -866,7 +867,7 @@ button:hover {
 .modal-content label {
     display: block;
     font-family: inconsolata, monospace;
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
     margin-bottom: 8px
 }
@@ -908,7 +909,37 @@ button:hover {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
-
 html {
     scroll-behavior: auto;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+        max-width: 95%;
+        margin: 0;
+        padding: 20px;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .modal-content h2 {
+        font-size: 25px;
+    }
+
+    .modal-content p {
+        font-size: 16px;
+    }
+
+    .modal-content input,
+    .modal-content textarea {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .modal-content button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
 }
