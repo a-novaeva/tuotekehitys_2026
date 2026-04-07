@@ -119,46 +119,6 @@ nav a:any-link {
     color: #fff;
 }
 
-
-@media screen and (max-width: 768px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 15px;
-        text-align: center;
-    }
-
-    .logo {
-        order: 1;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .nav-links {
-        order: 2;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .cta-button {
-        order: 3;
-        margin-top: 10px;
-    }
-
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-}
-
 main {
     display: grid;
     justify-items: center;
@@ -277,28 +237,6 @@ button:hover {
     text-align: center;
     color: green;
     margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .box {
-        width: 100%;
-    }
-    .footer-container {
-        width:100%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 50px;
-    }
-
-    .footer-links ul {
-        padding: 0;
-        list-style: none;
-    }
-
-    .footer {
-        width: 100%;
-    }
 }
 
 .footer {
@@ -500,20 +438,6 @@ button:hover {
     opacity: 1;
 }
 
-@media screen and (max-width: 768px) {
-    .logo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 20px;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    .section-divider {
-        width: 90%;
-    }
-}
-
 .gallery-section {
     width: 100%;
     max-width: 1200px;
@@ -590,34 +514,6 @@ button:hover {
   cursor: zoom-out;
 }
 
-
-@media screen and (max-width: 768px) {
-    .gallery-container {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding: 20px;
-        gap: 15px;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .gallery-item {
-        flex: 0 0 75%;
-        max-width: 300px;
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 5;
-        border-radius: 15px;
-    }
-
-    .gallery-pagination {
-        margin-top: 15px;
-    }
-}
 /* Layout resets for new pages */
 .page-content {
     max-width: 1000px;
@@ -790,11 +686,6 @@ button:hover {
     margin-top: 60px;
 }
 
-@media (max-width: 768px) {
-    .services-grid, .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
 .page-content h3 {
     color: white;
 }
@@ -920,6 +811,8 @@ html {
     scroll-behavior: auto;
 }
 
+
+
 @media (max-width: 600px) {
     .modal-content {
         width: 100%;
@@ -948,5 +841,175 @@ html {
         width: 100%;
         padding: 14px;
         font-size: 16px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .services-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        width: 90px;
+        height: auto;
+        margin: auto;
+        display: block;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 10px 0 !important;
+        gap: 10px !important;
+        width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-item {
+        flex: 0 0 60% !important;
+        max-width: 220px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .gallery-pagination {
+        margin-top: 15px;
+    }
+
+    .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+        gap: 25px 10px !important;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .logo-grid img {
+        max-width: 80px !important;
+        width: 100%;
+        height: auto;
+        opacity: 0.9;
+    }
+
+    .section-divider {
+    width: 90%;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .footer-container {
+        width:100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .footer-links ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    .footer {
+        width: 100%;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .logo {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links {
+        order: 2;
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cta-button {
+        order: 3;
+        width: 100%;
+        max-width: 250px;
+        margin-top: 10px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+        }
+
+    .index-page-content .hero-section {
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: top center !important;
+    }
+
+    .hero-logo img {
+        width: 180px !important;
+        height: auto !important;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .index-page-content img {
+        width: 100%;
+        height: 250px;
+        max-width: 400px;
+        object-fit: cover;
+    }
+
+    .hero-container .button-wrapper {
+        transform: none !important;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
     }
 }
