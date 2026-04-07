@@ -48,6 +48,7 @@ a {
     padding: 18px 32px;
     background: #0b0b0b;
     gap: 24px;
+    margin-left: 25px;
 }
 
 .logo img {
@@ -961,6 +962,7 @@ button:hover {
     .navbar {
         grid-template-columns: auto auto;
         justify-content: space-between;
+        margin: auto;
     }
 
     .menu-toggle {
