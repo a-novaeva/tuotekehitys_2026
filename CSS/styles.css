@@ -373,6 +373,14 @@ button:hover {
    ABOUT PAGE
    ========================================== */
 
+.left-text-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
 .h2-left, .text-left {
     text-align: left !important;
     margin-left: 0 !important;
@@ -404,8 +412,9 @@ button:hover {
 .experience {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Pakottaa sisällön alkamaan ylhäältä */
-    gap: 0; /* Poistaa automaattisen välitilan */
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
 }
 
 /* ==========================================
