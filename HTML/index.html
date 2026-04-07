@@ -87,8 +87,12 @@
 
         <hr class="section-divider">
 
-        <section class="gallery-section reveal">
-            <div class="gallery-container">
+        <section class="gallery-section">
+    <div class="gallery-slider">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Previous images">‹</button>
+
+        <div class="gallery-viewport">
+            <div class="gallery-container" id="galleryTrack">
                 <div class="gallery-item">
                     <a href="/images/mokoma_tuska.jpg" class="gallery-link">
                         <img src="/images/mokoma_tuska.jpg" alt="Mokoma - Tuska Mainstage">
@@ -124,15 +128,16 @@
                     </a>
                 </div>
             </div>
+        </div>
 
-            <div class="gallery-pictures">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </section>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Next images">›</button>
+    </div>
+
+    <div class="gallery-pictures">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+    </div>
+</section>
 
         <hr class="section-divider">
     </main>
@@ -295,6 +300,57 @@
                 .forEach(field => field.setCustomValidity(""));
             document.getElementById("msg").style.display = "none";
         });
+
+    const galleryTrack = document.getElementById("galleryTrack");
+    const leftArrow = document.querySelector(".gallery-arrow-left");
+    const rightArrow = document.querySelector(".gallery-arrow-right");
+    const dots = document.querySelectorAll(".gallery-pictures .dot");
+
+    let currentPage = 0;
+
+    function getItemsPerPage() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 900) return 2;
+        return 4;
+        }
+
+    function updateGallerySlider() {
+        const items = document.querySelectorAll(".gallery-item");
+        const itemsPerPage = getItemsPerPage();
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        if (currentPage >= totalPages) currentPage = totalPages - 1;
+        if (currentPage < 0) currentPage = 0;
+
+        const itemWidth = items[0].offsetWidth;
+        const gap = 24;
+        const moveAmount = currentPage * (itemWidth + gap) * itemsPerPage;
+
+        galleryTrack.style.transform = `translateX(-${moveAmount}px)`;
+
+        leftArrow.disabled = currentPage === 0;
+        rightArrow.disabled = currentPage === totalPages - 1;
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentPage);
+            
+            dot.style.display = index < totalPages ? "inline-block" : "none";
+                });
+            }
+
+    leftArrow.addEventListener("click", () => {
+        currentPage--;
+        updateGallerySlider();
+    });
+
+    rightArrow.addEventListener("click", () => {
+        currentPage++;
+        updateGallerySlider();
+    });
+
+    window.addEventListener("resize", updateGallerySlider);
+    window.addEventListener("load", updateGallerySlider);
+
     </script>
 </body>
 </html>
