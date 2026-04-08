@@ -278,6 +278,7 @@ main {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     scroll-margin-top: 110px;
+    scroll-snap-type: y mandatory;
 }
 
 .logo-hero,
@@ -289,6 +290,7 @@ main {
     width: 100%;
     padding: 100px 20px 90px;
     text-align: center;
+    scroll-snap-align: start;
 }
 
 .logo-hero img,
@@ -320,6 +322,7 @@ main {
     align-items: center;
     gap: 26px;
     width: min(100%, 1280px);
+    scroll-snap-align: start;
 }
 
 .hero-container img {
