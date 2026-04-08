@@ -65,44 +65,35 @@
         <hr class="section-divider line-reveal">
 
         <section class="logo-marquee-section reveal">
-    <p class="logo-section-title">trusted by artists &amp; events</p>
+            <p class="logo-section-title">trusted by artists &amp; events</p>
 
-    <div class="logo-slider">
-        <button class="logo-arrow logo-arrow-left" aria-label="Previous logo">‹</button>
+            <div class="logo-static-row" data-stagger>
+                <div class="logo-static-item stagger-item">
+                    <img src="/images/bloodwhitelogo.png" alt="Blood White">
+                </div>
 
-        <div class="logo-slider-viewport">
-            <div class="logo-slide active">
-                <img src="/images/bloodwhitelogo.png" alt="Blood White">
+                <div class="logo-static-item stagger-item">
+                    <img src="/images/nooralogo.png" alt="Noora Louhimo">
+                </div>
+
+                <div class="logo-static-item stagger-item">
+                    <img src="/images/mokomalogo.png" alt="Mokoma">
+                </div>
+
+                <div class="logo-static-item stagger-item">
+                    <img src="/images/lordilogo.png" alt="Lordi">
+                </div>
+
+                <div class="logo-static-item stagger-item">
+                    <img src="/images/combichristlogo.png" alt="Combichrist">
+                </div>
             </div>
-
-            <div class="logo-slide">
-                <img src="/images/nooralogo.png" alt="Noora Louhimo">
-            </div>
-
-            <div class="logo-slide">
-                <img src="/images/mokomalogo.png" alt="Mokoma">
-            </div>
-
-            <div class="logo-slide">
-                <img src="/images/lordilogo.png" alt="Lordi">
-            </div>
-        </div>
-
-        <button class="logo-arrow logo-arrow-right" aria-label="Next logo">›</button>
-    </div>
-
-    <div class="logo-slider-dots">
-        <span class="logo-dot active"></span>
-        <span class="logo-dot"></span>
-        <span class="logo-dot"></span>
-        <span class="logo-dot"></span>
-    </div>
-</section>
+        </section>
 
         <hr class="section-divider line-reveal">
 
         <section class="gallery-section reveal">
-            <div class="gallery-slider">
+            <div class="gallery-slider" id="gallerySlider">
                 <button class="gallery-arrow gallery-arrow-left" aria-label="Previous images">‹</button>
 
                 <div class="gallery-viewport">
@@ -214,271 +205,244 @@
 
     <script>
         if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
+            history.scrollRestoration = "manual";
         }
 
         window.addEventListener("load", () => {
             window.scrollTo(0, 0);
         });
-        
-      // REVEAL + STAGGER
-      const revealElements = document.querySelectorAll(".reveal, .line-reveal");
 
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, { threshold: 0.15 });
+        // REVEAL + STAGGER
+        const revealElements = document.querySelectorAll(".reveal, .line-reveal");
 
-      revealElements.forEach((el) => revealObserver.observe(el));
-
-      const staggerGroups = document.querySelectorAll("[data-stagger]");
-
-      const staggerObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const items = entry.target.querySelectorAll(".stagger-item");
-            items.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add("visible");
-              }, index * 120);
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
             });
-          }
-        });
-      }, { threshold: 0.15 });
+        }, { threshold: 0.15 });
 
-      staggerGroups.forEach((group) => staggerObserver.observe(group));
+        revealElements.forEach((el) => revealObserver.observe(el));
 
-      // MOBILE MENU
-      const menuToggle = document.querySelector(".menu-toggle");
-      const mobileMenu = document.querySelector(".mobile-menu");
+        const staggerGroups = document.querySelectorAll("[data-stagger]");
 
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener("click", () => {
-          const isOpen = mobileMenu.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-      }
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll(".stagger-item");
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add("visible");
+                        }, index * 120);
+                    });
+                }
+            });
+        }, { threshold: 0.15 });
 
-      // LIGHTBOX
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = lightbox ? lightbox.querySelector("img") : null;
-      const galleryLinks = document.querySelectorAll(".gallery-link");
+        staggerGroups.forEach((group) => staggerObserver.observe(group));
 
-      function openLightbox(src, alt) {
-        if (!lightbox || !lightboxImg) return;
-        lightboxImg.src = src;
-        lightboxImg.alt = alt;
-        lightbox.classList.add("active");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.classList.add("no-scroll");
-      }
+        // MOBILE MENU
+        const menuToggle = document.querySelector(".menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
 
-      function closeLightbox() {
-        if (!lightbox || !lightboxImg) return;
-        lightbox.classList.remove("active");
-        lightbox.setAttribute("aria-hidden", "true");
-        lightboxImg.src = "";
-        lightboxImg.alt = "";
-        document.body.classList.remove("no-scroll");
-      }
-
-      galleryLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const img = link.querySelector("img");
-          openLightbox(link.href, img ? img.alt : "");
-        });
-      });
-
-      if (lightbox) {
-        lightbox.addEventListener("click", closeLightbox);
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lightbox && lightbox.classList.contains("active")) {
-          closeLightbox();
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener("click", () => {
+                const isOpen = mobileMenu.classList.toggle("open");
+                menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
         }
-      });
 
-      // CONTACT FORM
-      const form = document.getElementById("contact-form");
-      const nameInput = document.getElementById("name");
-      const emailInput = document.getElementById("email");
-      const messageInput = document.getElementById("message");
-      const modalClose = document.querySelector(".modal-close");
-      const msgBox = document.getElementById("msg");
+        // LIGHTBOX
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = lightbox ? lightbox.querySelector("img") : null;
+        const galleryLinks = document.querySelectorAll(".gallery-link");
 
-      if (form && nameInput && emailInput && messageInput) {
-        [nameInput, emailInput, messageInput].forEach((field) => {
-          field.addEventListener("input", () => {
-            field.setCustomValidity("");
-          });
+        function openLightbox(src, alt) {
+            if (!lightbox || !lightboxImg) return;
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.classList.add("active");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("no-scroll");
+        }
+
+        function closeLightbox() {
+            if (!lightbox || !lightboxImg) return;
+            lightbox.classList.remove("active");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImg.src = "";
+            lightboxImg.alt = "";
+            document.body.classList.remove("no-scroll");
+        }
+
+        galleryLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const img = link.querySelector("img");
+                openLightbox(link.href, img ? img.alt : "");
+            });
         });
 
-        form.addEventListener("submit", function (e) {
-          if (nameInput.value.trim() === "") {
-            nameInput.setCustomValidity("Please enter your name.");
-          }
+        if (lightbox) {
+            lightbox.addEventListener("click", closeLightbox);
+        }
 
-          if (emailInput.value.trim() === "") {
-            emailInput.setCustomValidity("Please enter your email address.");
-          } else if (!emailInput.value.includes("@")) {
-            emailInput.setCustomValidity("Please include an '@' in the email address.");
-          } else if (!emailInput.value.includes(".")) {
-            emailInput.setCustomValidity("Please include a '.' in the email address.");
-          } else if (!emailInput.validity.valid) {
-            emailInput.setCustomValidity("Please enter a valid email address.");
-          }
-
-          if (messageInput.value.trim() === "") {
-            messageInput.setCustomValidity("Please enter your message.");
-          }
-
-          if (!form.checkValidity()) {
-            e.preventDefault();
-            form.reportValidity();
-            return;
-          }
-
-          e.preventDefault();
-
-          if (msgBox) {
-            msgBox.style.display = "block";
-          }
-
-          form.reset();
-        });
-
-        if (modalClose) {
-          modalClose.addEventListener("click", () => {
-            form.reset();
-
-            document
-              .querySelectorAll("#contact-form input, #contact-form textarea")
-              .forEach((field) => field.setCustomValidity(""));
-
-            if (msgBox) {
-              msgBox.style.display = "none";
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && lightbox && lightbox.classList.contains("active")) {
+                closeLightbox();
             }
-          });
-        }
-      }
-
-      // GALLERY SLIDER
-      const galleryTrack = document.getElementById("galleryTrack");
-      const leftArrow = document.querySelector(".gallery-arrow-left");
-      const rightArrow = document.querySelector(".gallery-arrow-right");
-      const dots = document.querySelectorAll(".gallery-pictures .dot");
-
-      let currentPage = 0;
-
-      function getItemsPerPage() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 900) return 2;
-        return 4;
-      }
-
-      function updateGallerySlider() {
-        if (!galleryTrack || !leftArrow || !rightArrow) return;
-
-        const items = document.querySelectorAll(".gallery-item");
-        if (!items.length) return;
-
-        const itemsPerPage = getItemsPerPage();
-        const totalPages = Math.ceil(items.length / itemsPerPage);
-
-        if (currentPage >= totalPages) currentPage = totalPages - 1;
-        if (currentPage < 0) currentPage = 0;
-
-        const itemWidth = items[0].offsetWidth;
-        const gap = 24;
-        const moveAmount = currentPage * (itemWidth + gap) * itemsPerPage;
-
-        galleryTrack.style.transform = `translateX(-${moveAmount}px)`;
-
-        leftArrow.disabled = currentPage === 0;
-        rightArrow.disabled = currentPage === totalPages - 1;
-
-        dots.forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentPage);
-          dot.style.display = index < totalPages ? "inline-block" : "none";
-        });
-      }
-
-      if (leftArrow && rightArrow) {
-        leftArrow.addEventListener("click", () => {
-          currentPage--;
-          updateGallerySlider();
         });
 
-        rightArrow.addEventListener("click", () => {
-          currentPage++;
-          updateGallerySlider();
-        });
-      }
+        // CONTACT FORM
+        const form = document.getElementById("contact-form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+        const modalClose = document.querySelector(".modal-close");
+        const msgBox = document.getElementById("msg");
 
-      window.addEventListener("resize", updateGallerySlider);
-      window.addEventListener("load", updateGallerySlider);
+        if (form && nameInput && emailInput && messageInput) {
+            [nameInput, emailInput, messageInput].forEach((field) => {
+                field.addEventListener("input", () => {
+                    field.setCustomValidity("");
+                });
+            });
 
+            form.addEventListener("submit", function (e) {
+                if (nameInput.value.trim() === "") {
+                    nameInput.setCustomValidity("Please enter your name.");
+                }
 
-          // LOGO SLIDER
-      const logoSlides = document.querySelectorAll(".logo-slide");
-      const logoDots = document.querySelectorAll(".logo-dot");
-      const logoLeftArrow = document.querySelector(".logo-arrow-left");
-      const logoRightArrow = document.querySelector(".logo-arrow-right");
+                if (emailInput.value.trim() === "") {
+                    emailInput.setCustomValidity("Please enter your email address.");
+                } else if (!emailInput.value.includes("@")) {
+                    emailInput.setCustomValidity("Please include an '@' in the email address.");
+                } else if (!emailInput.value.includes(".")) {
+                    emailInput.setCustomValidity("Please include a '.' in the email address.");
+                } else if (!emailInput.validity.valid) {
+                    emailInput.setCustomValidity("Please enter a valid email address.");
+                }
 
-      let currentLogo = 0;
-      let logoInterval;
+                if (messageInput.value.trim() === "") {
+                    messageInput.setCustomValidity("Please enter your message.");
+                }
 
-      function updateLogoSlider(index) {
-        logoSlides.forEach((slide, i) => {
-          slide.classList.toggle("active", i === index);
-        });
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    form.reportValidity();
+                    return;
+                }
 
-        logoDots.forEach((dot, i) => {
-          dot.classList.toggle("active", i === index);
-        });
-      }
+                e.preventDefault();
 
-      function nextLogo() {
-        currentLogo = (currentLogo + 1) % logoSlides.length;
-        updateLogoSlider(currentLogo);
-      }
+                if (msgBox) {
+                    msgBox.style.display = "block";
+                }
 
-      function prevLogo() {
-        currentLogo = (currentLogo - 1 + logoSlides.length) % logoSlides.length;
-        updateLogoSlider(currentLogo);
-      }
+                form.reset();
+            });
 
-      function startLogoAutoplay() {
-        if (!logoSlides.length) return;
-        logoInterval = setInterval(nextLogo, 3000);
-      }
+            if (modalClose) {
+                modalClose.addEventListener("click", () => {
+                    form.reset();
 
-      function stopLogoAutoplay() {
-        clearInterval(logoInterval);
-      }
+                    document
+                        .querySelectorAll("#contact-form input, #contact-form textarea")
+                        .forEach((field) => field.setCustomValidity(""));
 
-      if (logoSlides.length) {
-        if (logoLeftArrow && logoRightArrow) {
-          logoLeftArrow.addEventListener("click", () => {
-            prevLogo();
-            stopLogoAutoplay();
-            startLogoAutoplay();
-          });
-
-          logoRightArrow.addEventListener("click", () => {
-            nextLogo();
-            stopLogoAutoplay();
-            startLogoAutoplay();
-          });
+                    if (msgBox) {
+                        msgBox.style.display = "none";
+                    }
+                });
+            }
         }
 
-        startLogoAutoplay();
-      }
+        // GALLERY SLIDER
+        const galleryTrack = document.getElementById("galleryTrack");
+        const leftArrow = document.querySelector(".gallery-arrow-left");
+        const rightArrow = document.querySelector(".gallery-arrow-right");
+        const dots = document.querySelectorAll(".gallery-pictures .dot");
+        const gallerySlider = document.getElementById("gallerySlider");
+
+        let currentPage = 0;
+        let galleryInterval;
+
+        function getItemsPerPage() {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 900) return 2;
+            return 4;
+        }
+
+        function updateGallerySlider() {
+            if (!galleryTrack || !leftArrow || !rightArrow) return;
+
+            const items = document.querySelectorAll(".gallery-item");
+            if (!items.length) return;
+
+            const itemsPerPage = getItemsPerPage();
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+
+            if (currentPage >= totalPages) currentPage = totalPages - 1;
+            if (currentPage < 0) currentPage = 0;
+
+            const itemWidth = items[0].offsetWidth;
+            const gap = 32;
+            const moveAmount = currentPage * (itemWidth + gap) * itemsPerPage;
+
+            galleryTrack.style.transform = `translateX(-${moveAmount}px)`;
+
+            leftArrow.disabled = currentPage === 0;
+            rightArrow.disabled = currentPage === totalPages - 1;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentPage);
+                dot.style.display = index < totalPages ? "inline-block" : "none";
+            });
+        }
+
+        function nextGalleryPage() {
+            const items = document.querySelectorAll(".gallery-item");
+            const itemsPerPage = getItemsPerPage();
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+
+            currentPage = (currentPage + 1) % totalPages;
+            updateGallerySlider();
+        }
+
+        function startGalleryAutoplay() {
+            stopGalleryAutoplay();
+            galleryInterval = setInterval(nextGalleryPage, 3500);
+        }
+
+        function stopGalleryAutoplay() {
+            clearInterval(galleryInterval);
+        }
+
+        if (leftArrow && rightArrow) {
+            leftArrow.addEventListener("click", () => {
+                currentPage--;
+                updateGallerySlider();
+                startGalleryAutoplay();
+            });
+
+            rightArrow.addEventListener("click", () => {
+                currentPage++;
+                updateGallerySlider();
+                startGalleryAutoplay();
+            });
+        }
+
+        if (gallerySlider) {
+            gallerySlider.addEventListener("mouseenter", stopGalleryAutoplay);
+            gallerySlider.addEventListener("mouseleave", startGalleryAutoplay);
+        }
+
+        window.addEventListener("resize", updateGallerySlider);
+        window.addEventListener("load", () => {
+            updateGallerySlider();
+            startGalleryAutoplay();
+        });
     </script>
 </body>
 </html>

@@ -13,7 +13,6 @@
 <body>
     <header class="site-header">
         <nav class="navbar">
-            
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About us</a></li>
@@ -116,15 +115,42 @@
 
         <section class="logos-section">
             <h2>Trusted by leading artists</h2>
-            <p>We’ve had the privilege to work with some of the biggest names in music</p>
 
-            <div class="logos-grid">
-                <div class="logo-box"><img src="/images/lordilogo.png" alt="Lordi"></div>
-                <div class="logo-box"><img src="/images/mokomalogo.png" alt="Mokoma"></div>
-                <div class="logo-box"><img src="/images/combichristlogo.png" alt="Combichrist"></div>
-                <div class="logo-box"><img src="/images/bloodwhitelogo.png" alt="Blood White"></div>
-                <div class="logo-box"><img src="/images/nooralogo.png" alt="Noora Louhimo"></div>
-                <div class="logo-box"><img src="/images/uniklubilogo.png" alt="Uniklubi"></div>
+            <h3>We’ve had the privilege to work with some of the biggest names in music</h3>
+
+            <div class="references-logo-slider" id="referencesLogoSlider">
+                <button class="references-logo-arrow references-logo-arrow-left" aria-label="Previous logos">‹</button>
+
+                <div class="references-logo-viewport">
+                    <div class="references-logo-track" id="referencesLogoTrack">
+                        <div class="references-logo-item">
+                            <div class="logo-box"><img src="/images/lordilogo.png" alt="Lordi"></div>
+                        </div>
+                        <div class="references-logo-item">
+                            <div class="logo-box"><img src="/images/mokomalogo.png" alt="Mokoma"></div>
+                        </div>
+                        <div class="references-logo-item">
+                            <div class="logo-box"><img src="/images/combichristlogo.png" alt="Combichrist"></div>
+                        </div>
+                        <div class="references-logo-item">
+                            <div class="logo-box"><img src="/images/bloodwhitelogo.png" alt="Blood White"></div>
+                        </div>
+                        <div class="references-logo-item">
+                            <div class="logo-box"><img src="/images/nooralogo.png" alt="Noora Louhimo"></div>
+                        </div>
+                        <div class="references-logo-item">
+                            <div class="logo-box"><img src="/images/uniklubilogo.png" alt="Uniklubi"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="references-logo-arrow references-logo-arrow-right" aria-label="Next logos">›</button>
+            </div>
+
+            <div class="references-logo-dots">
+                <span class="references-logo-dot active"></span>
+                <span class="references-logo-dot"></span>
+                <span class="references-logo-dot"></span>
             </div>
         </section>
 
@@ -266,6 +292,62 @@
                 .forEach(field => field.setCustomValidity(""));
             document.getElementById("msg").style.display = "none";
         });
+
+        // REFERENCES LOGO SLIDER
+        const referencesLogoTrack = document.getElementById("referencesLogoTrack");
+        const referencesLogoLeftArrow = document.querySelector(".references-logo-arrow-left");
+        const referencesLogoRightArrow = document.querySelector(".references-logo-arrow-right");
+        const referencesLogoDots = document.querySelectorAll(".references-logo-dot");
+
+        let referencesLogoPage = 0;
+
+        function getReferencesLogoItemsPerPage() {
+            if (window.innerWidth <= 768) return 1;
+            if (window.innerWidth <= 1024) return 2;
+            return 3;
+        }
+
+        function updateReferencesLogoSlider() {
+            if (!referencesLogoTrack || !referencesLogoLeftArrow || !referencesLogoRightArrow) return;
+
+            const items = document.querySelectorAll(".references-logo-item");
+            if (!items.length) return;
+
+            const itemsPerPage = getReferencesLogoItemsPerPage();
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+
+            if (referencesLogoPage >= totalPages) referencesLogoPage = totalPages - 1;
+            if (referencesLogoPage < 0) referencesLogoPage = 0;
+
+            const itemWidth = items[0].offsetWidth;
+            const gap = 20;
+            const moveAmount = referencesLogoPage * (itemWidth + gap) * itemsPerPage;
+
+            referencesLogoTrack.style.transform = `translateX(-${moveAmount}px)`;
+
+            referencesLogoLeftArrow.disabled = referencesLogoPage === 0;
+            referencesLogoRightArrow.disabled = referencesLogoPage === totalPages - 1;
+
+            referencesLogoDots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === referencesLogoPage);
+                dot.style.display = index < totalPages ? "inline-block" : "none";
+            });
+        }
+
+        if (referencesLogoLeftArrow && referencesLogoRightArrow) {
+            referencesLogoLeftArrow.addEventListener("click", () => {
+                referencesLogoPage--;
+                updateReferencesLogoSlider();
+            });
+
+            referencesLogoRightArrow.addEventListener("click", () => {
+                referencesLogoPage++;
+                updateReferencesLogoSlider();
+            });
+        }
+
+        window.addEventListener("resize", updateReferencesLogoSlider);
+        window.addEventListener("load", updateReferencesLogoSlider);
     </script>
 </body>
 </html>
