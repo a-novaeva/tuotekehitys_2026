@@ -32,6 +32,19 @@ a {
     text-decoration: none;
 }
 
+@font-face {
+    font-family: 'Mikko Sans';
+    src: url('../fonts/MikkoSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.handwritten-title {
+    font-family: 'Mikko Sans', cursive;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
 /* =========================
    HEADER / NAV
    ========================= */
