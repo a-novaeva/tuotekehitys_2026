@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y;
 }
 
 body {
@@ -15,7 +16,6 @@ body {
     color: #fff;
     font-family: 'Inconsolata', monospace;
     padding-top: 110px;
-    scroll-snap-type: y proximity;
 }
 
 body.no-scroll {
@@ -236,7 +236,7 @@ main {
 }
 
 .page-hero {
-    padding: 40px 0 30px;
+    padding: 60px 0 30px;
     text-align: center;
 }
 
@@ -257,10 +257,11 @@ main {
 
 .line.full-line,
 .section-divider {
-    width: min(100%, 1240px);
-    margin: 70px auto;
+    width: auto;
+    max-width: 800px;
+    margin: 50px auto;
     border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 3px solid rgba(255, 255, 255, 0.484);
 }
 
 /* =========================
@@ -271,14 +272,15 @@ main {
     padding-top: 24px;
 }
 
-.logo-hero,
-.hero-section,
-.logo-marquee-section,
-.gallery-section {
+.logo-hero {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    scroll-margin-top: 110px;
-    scroll-snap-type: y mandatory;
+    scroll-margin-top: 120px;
+    min-height: 70vh;
+}
+
+.hero-section {
+    min-height: auto;
 }
 
 .logo-hero,
@@ -288,22 +290,21 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 100px 20px 90px;
+    padding: 40px 20px 40px;
     text-align: center;
-    scroll-snap-align: start;
 }
 
 .logo-hero img,
 .index-page-content .image img {
     width: min(70vw, 620px);
     height: auto;
-    margin-bottom: 46px;
+    margin-bottom: 32px;
 }
 
 .hero-subtitle {
     margin: 0;
     color: #f2f2f2;
-    font-size: 24px;
+    font-size: 30px;
     letter-spacing: 0.28em;
     text-align: center;
 }
@@ -311,24 +312,30 @@ main {
 .index-page-content .hero-section {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 100%;
-    padding: 0 20px 80px;
+    padding: 0 20px 40px;
 }
 
 .hero-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 26px;
+    gap: 1px;
     width: min(100%, 1280px);
-    scroll-snap-align: start;
 }
 
 .hero-container img {
     width: 100%;
     max-width: 1280px;
     height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;;
+}
+
+.hero-container .button-wrapper {
+    margin-top: -150px;
+    margin-bottom: 50px;
 }
 
 /* logo marquee */
@@ -345,6 +352,7 @@ main {
     margin: 0 auto;
     padding: 30px 20px 60px;
     text-align: center;
+    
 }
 
 .logo-marquee {
@@ -358,7 +366,7 @@ main {
     align-items: center;
     gap: 70px;
     width: max-content;
-    animation: scrollLogos 18s linear infinite;
+    animation: scrollLogos 30s linear infinite;
 }
 
 .logo-track img {
@@ -403,7 +411,7 @@ main {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px 40px;
+    padding: 30px 20px 40px;
 }
 
 .gallery-slider {
