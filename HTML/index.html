@@ -65,22 +65,39 @@
         <hr class="section-divider line-reveal">
 
         <section class="logo-marquee-section reveal">
-            <p class="logo-section-title">trusted by artists &amp; events</p>
+    <p class="logo-section-title">trusted by artists &amp; events</p>
 
-            <div class="logo-marquee">
-                <div class="logo-track">
-                    <img src="/images/bloodwhitelogo.png" alt="Blood White">
-                    <img src="/images/nooralogo.png" alt="Noora Louhimo">
-                    <img src="/images/mokomalogo.png" alt="Mokoma">
-                    <img src="/images/lordilogo.png" alt="Lordi">
+    <div class="logo-slider">
+        <button class="logo-arrow logo-arrow-left" aria-label="Previous logo">‹</button>
 
-                    <img src="/images/bloodwhitelogo.png" alt="Blood White">
-                    <img src="/images/nooralogo.png" alt="Noora Louhimo">
-                    <img src="/images/mokomalogo.png" alt="Mokoma">
-                    <img src="/images/lordilogo.png" alt="Lordi">
-                </div>
+        <div class="logo-slider-viewport">
+            <div class="logo-slide active">
+                <img src="/images/bloodwhitelogo.png" alt="Blood White">
             </div>
-        </section>
+
+            <div class="logo-slide">
+                <img src="/images/nooralogo.png" alt="Noora Louhimo">
+            </div>
+
+            <div class="logo-slide">
+                <img src="/images/mokomalogo.png" alt="Mokoma">
+            </div>
+
+            <div class="logo-slide">
+                <img src="/images/lordilogo.png" alt="Lordi">
+            </div>
+        </div>
+
+        <button class="logo-arrow logo-arrow-right" aria-label="Next logo">›</button>
+    </div>
+
+    <div class="logo-slider-dots">
+        <span class="logo-dot active"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-dot"></span>
+        <span class="logo-dot"></span>
+    </div>
+</section>
 
         <hr class="section-divider line-reveal">
 
@@ -405,6 +422,63 @@
 
       window.addEventListener("resize", updateGallerySlider);
       window.addEventListener("load", updateGallerySlider);
+
+
+          // LOGO SLIDER
+      const logoSlides = document.querySelectorAll(".logo-slide");
+      const logoDots = document.querySelectorAll(".logo-dot");
+      const logoLeftArrow = document.querySelector(".logo-arrow-left");
+      const logoRightArrow = document.querySelector(".logo-arrow-right");
+
+      let currentLogo = 0;
+      let logoInterval;
+
+      function updateLogoSlider(index) {
+        logoSlides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+
+        logoDots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+        });
+      }
+
+      function nextLogo() {
+        currentLogo = (currentLogo + 1) % logoSlides.length;
+        updateLogoSlider(currentLogo);
+      }
+
+      function prevLogo() {
+        currentLogo = (currentLogo - 1 + logoSlides.length) % logoSlides.length;
+        updateLogoSlider(currentLogo);
+      }
+
+      function startLogoAutoplay() {
+        if (!logoSlides.length) return;
+        logoInterval = setInterval(nextLogo, 3000);
+      }
+
+      function stopLogoAutoplay() {
+        clearInterval(logoInterval);
+      }
+
+      if (logoSlides.length) {
+        if (logoLeftArrow && logoRightArrow) {
+          logoLeftArrow.addEventListener("click", () => {
+            prevLogo();
+            stopLogoAutoplay();
+            startLogoAutoplay();
+          });
+
+          logoRightArrow.addEventListener("click", () => {
+            nextLogo();
+            stopLogoAutoplay();
+            startLogoAutoplay();
+          });
+        }
+
+        startLogoAutoplay();
+      }
     </script>
 </body>
 </html>

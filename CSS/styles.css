@@ -351,7 +351,7 @@ main {
     margin-bottom: 50px;
 }
 
-/* logo marquee */
+/* logo slider */
 
 .logo-section-title {
     margin-bottom: 80px;
@@ -361,61 +361,90 @@ main {
 
 .logo-marquee-section {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 30px 20px 60px;
     text-align: center;
-    
 }
 
-.logo-marquee {
+.logo-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.logo-slider-viewport {
     position: relative;
     width: 100%;
+    max-width: 1400px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-.logo-track {
+.logo-slide {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
-    gap: 70px;
-    width: max-content;
-    animation: scrollLogos 30s linear infinite;
-}
-
-.logo-track img {
-    width: auto;
-    height: 40px;
-    flex-shrink: 0;
-}
-
-@keyframes scrollLogos {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-.logo-marquee::before,
-.logo-marquee::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 80px;
-    height: 100%;
-    z-index: 2;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
     pointer-events: none;
 }
 
-.logo-marquee::before {
-    left: 0;
-    background: linear-gradient(to right, #000, transparent);
+.logo-slide.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.logo-marquee::after {
-    right: 0;
-    background: linear-gradient(to left, #000, transparent);
+.logo-slide img {
+    width: auto;
+    max-width: 320px;
+    max-height: 65px;
+    height: auto;
+}
+
+.logo-arrow {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 42px;
+    line-height: 1;
+    width: auto;
+    height: auto;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.logo-arrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.logo-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.logo-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #666;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+.logo-dot.active {
+    width: 24px;
+    background-color: #fff;
 }
 
 /* gallery */
@@ -1308,5 +1337,23 @@ button:hover {
     .modal-content button {
         padding: 14px;
         font-size: 16px;
+    }
+
+    .logo-slider {
+    gap: 16px;
+    }
+
+    .logo-slider-viewport {
+        max-width: 220px;
+        height: 60px;
+    }
+
+    .logo-slide img {
+        max-width: 160px;
+        max-height: 34px;
+    }
+
+    .logo-arrow {
+        font-size: 26px;
     }
 }
