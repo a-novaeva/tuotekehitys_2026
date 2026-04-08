@@ -1,448 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redemption Tones</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redemption Tones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-    <header class="site-header">
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="references.html">References</a></li>
-            </ul>
+  <header class="site-header">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
 
-            <a href="#contact-modal" class="cta-button nav-cta">Contact us</a>
+      <a href="#contact-modal" class="cta-button nav-cta">Contact us</a>
 
-            <button
-                class="menu-toggle"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
 
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About us</a>
-            <a href="services.html">Services</a>
-            <a href="references.html">References</a>
-            <a href="#contact-modal" class="cta-button mobile-cta">Contact us</a>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About us</a>
+      <a href="services.html">Services</a>
+      <a href="references.html">References</a>
+      <a href="#contact-modal" class="cta-button mobile-cta">Contact us</a>
+    </div>
+  </header>
+
+  <main class="index-page-content">
+    <section class="logo-hero reveal">
+      <img src="/images/etusivu_logo.png" alt="Redemption Tones logo" />
+    </section>
+
+    <hr class="section-divider line-reveal" />
+
+    <section class="hero-section reveal">
+      <div class="hero-container">
+        <img
+          src="/images/hero_kuva.png"
+          alt="Professional live sound and rental gear for bands, tours and events"
+        />
+
+        <div class="button-wrapper" data-stagger>
+          <a href="#contact-modal" class="cta-button stagger-item">Contact us</a>
+          <a href="services.html" class="cta-button stagger-item">Our Services</a>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main class="index-page-content">
-        <section class="logo-hero reveal">
-            <img src="/images/etusivu_logo.png" alt="Redemption Tones logo">
-        </section>
+    <hr class="section-divider line-reveal" />
 
-        <hr class="section-divider line-reveal">
+    <section class="logo-showcase reveal">
+      <p class="logo-section-title">trusted by artists &amp; events</p>
 
-        <section class="hero-section reveal">
-            <div class="hero-container">
-                <img
-                    src="/images/hero_kuva.png"
-                    alt="Professional live sound and rental gear for bands, tours and events">
+      <div class="logo-static-row" data-stagger>
+        <div class="logo-static-item stagger-item">
+          <img src="/images/bloodwhitelogo.png" alt="Blood White" />
+        </div>
+        <div class="logo-static-item stagger-item">
+          <img src="/images/nooralogo.png" alt="Noora Louhimo" />
+        </div>
+        <div class="logo-static-item stagger-item">
+          <img src="/images/mokomalogo.png" alt="Mokoma" />
+        </div>
+        <div class="logo-static-item stagger-item">
+          <img src="/images/lordilogo.png" alt="Lordi" />
+        </div>
+        <div class="logo-static-item stagger-item">
+          <img src="/images/combichristlogo.png" alt="Combichrist" />
+        </div>
+      </div>
+    </section>
 
-                <div class="button-wrapper" data-stagger>
-                    <a href="#contact-modal" class="cta-button stagger-item">Contact us</a>
-                    <a href="services.html" class="cta-button stagger-item">Our Services</a>
-                </div>
-            </div>
-        </section>
+    <hr class="section-divider line-reveal" />
 
-        <hr class="section-divider line-reveal">
+    <section class="gallery-section reveal">
+      <div class="gallery-slider" id="gallerySlider">
+        <button class="gallery-arrow gallery-arrow-left" aria-label="Previous images">‹</button>
 
-        <section class="logo-marquee-section reveal">
-            <p class="logo-section-title">trusted by artists &amp; events</p>
-
-            <div class="logo-static-row" data-stagger>
-                <div class="logo-static-item stagger-item">
-                    <img src="/images/bloodwhitelogo.png" alt="Blood White">
-                </div>
-
-                <div class="logo-static-item stagger-item">
-                    <img src="/images/nooralogo.png" alt="Noora Louhimo">
-                </div>
-
-                <div class="logo-static-item stagger-item">
-                    <img src="/images/mokomalogo.png" alt="Mokoma">
-                </div>
-
-                <div class="logo-static-item stagger-item">
-                    <img src="/images/lordilogo.png" alt="Lordi">
-                </div>
-
-                <div class="logo-static-item stagger-item">
-                    <img src="/images/combichristlogo.png" alt="Combichrist">
-                </div>
-            </div>
-        </section>
-
-        <hr class="section-divider line-reveal">
-
-        <section class="gallery-section reveal">
-            <div class="gallery-slider" id="gallerySlider">
-                <button class="gallery-arrow gallery-arrow-left" aria-label="Previous images">‹</button>
-
-                <div class="gallery-viewport">
-                    <div class="gallery-container" id="galleryTrack" data-stagger>
-                        <div class="gallery-item stagger-item">
-                            <a href="/images/mokoma_tuska.jpg" class="gallery-link">
-                                <img src="/images/mokoma_tuska.jpg" alt="Mokoma - Tuska Mainstage">
-                                <span class="gallery-caption">Mokoma - Tuska Mainstage</span>
-                            </a>
-                        </div>
-
-                        <div class="gallery-item stagger-item">
-                            <a href="/images/lordi_summer_breeze.jpg" class="gallery-link">
-                                <img src="/images/lordi_summer_breeze.jpg" alt="Lordi - Summer Breeze Mainstage">
-                                <span class="gallery-caption">Lordi - Summer Breeze Mainstage</span>
-                            </a>
-                        </div>
-
-                        <div class="gallery-item stagger-item">
-                            <a href="/images/combichrist_mystic.jpg" class="gallery-link">
-                                <img src="/images/combichrist_mystic.jpg" alt="Combichrist - Mystic Festival, Gdansk">
-                                <span class="gallery-caption">Combichrist - Mystic Festival, Gdansk</span>
-                            </a>
-                        </div>
-
-                        <div class="gallery-item stagger-item">
-                            <a href="/images/combichrist_wave_gottik.jpg" class="gallery-link">
-                                <img src="/images/combichrist_wave_gottik.jpg" alt="Combichrist - Wave Gotik Treffen, Leipzig">
-                                <span class="gallery-caption">Combichrist - Wave Gotik Treffen, Leipzig</span>
-                            </a>
-                        </div>
-
-                        <div class="gallery-item stagger-item">
-                            <a href="/images/bloodwhite_madrid.jpg" class="gallery-link">
-                                <img src="/images/bloodwhite_madrid.jpg" alt="Blood White - Madrid">
-                                <span class="gallery-caption">Blood White - Madrid</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="gallery-arrow gallery-arrow-right" aria-label="Next images">›</button>
+        <div class="gallery-viewport">
+          <div class="gallery-container" id="galleryTrack" data-stagger>
+            <div class="gallery-item stagger-item">
+              <a href="/images/mokoma_tuska.jpg" class="gallery-link">
+                <img src="/images/mokoma_tuska.jpg" alt="Mokoma - Tuska Mainstage" />
+                <span class="gallery-caption">Mokoma - Tuska Mainstage</span>
+              </a>
             </div>
 
-            <div class="gallery-pictures">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-            </div>
-        </section>
-
-        <hr class="section-divider line-reveal">
-    </main>
-
-    <footer class="footer reveal">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="/images/logo2.png" alt="Redemption Tones">
+            <div class="gallery-item stagger-item">
+              <a href="/images/lordi_summer_breeze.jpg" class="gallery-link">
+                <img src="/images/lordi_summer_breeze.jpg" alt="Lordi - Summer Breeze Mainstage" />
+                <span class="gallery-caption">Lordi - Summer Breeze Mainstage</span>
+              </a>
             </div>
 
-            <div class="footer-info">
-                <p><strong>Redemption Tones</strong></p>
-                <p><a href="mailto:hello@redemptiontones.com">hello@redemptiontones.com</a></p>
-                <p><a href="https://redemptiontones.com">redemptiontones.com</a></p>
+            <div class="gallery-item stagger-item">
+              <a href="/images/combichrist_mystic.jpg" class="gallery-link">
+                <img src="/images/combichrist_mystic.jpg" alt="Combichrist - Mystic Festival, Gdansk" />
+                <span class="gallery-caption">Combichrist - Mystic Festival, Gdansk</span>
+              </a>
             </div>
 
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#contact-modal">Contact us</a></li>
-                    <li><a href="#">Booking</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
+            <div class="gallery-item stagger-item">
+              <a href="/images/combichrist_wave_gottik.jpg" class="gallery-link">
+                <img src="/images/combichrist_wave_gottik.jpg" alt="Combichrist - Wave Gotik Treffen, Leipzig" />
+                <span class="gallery-caption">Combichrist - Wave Gotik Treffen, Leipzig</span>
+              </a>
             </div>
+
+            <div class="gallery-item stagger-item">
+              <a href="/images/bloodwhite_madrid.jpg" class="gallery-link">
+                <img src="/images/bloodwhite_madrid.jpg" alt="Blood White - Madrid" />
+                <span class="gallery-caption">Blood White - Madrid</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 Redemption Tones. All rights reserved.</p>
-        </div>
-    </footer>
+        <button class="gallery-arrow gallery-arrow-right" aria-label="Next images">›</button>
+      </div>
 
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-        <img src="" alt="">
+      <div class="gallery-pictures">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+
+    <hr class="section-divider line-reveal" />
+  </main>
+
+  <footer class="footer reveal">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="/images/logo2.png" alt="Redemption Tones" />
+      </div>
+
+      <div class="footer-info">
+        <p><strong>Redemption Tones</strong></p>
+        <p><a href="mailto:hello@redemptiontones.com">hello@redemptiontones.com</a></p>
+        <p><a href="https://redemptiontones.com">redemptiontones.com</a></p>
+      </div>
+
+      <div class="footer-links">
+        <ul>
+          <li><a href="#contact-modal">Contact us</a></li>
+          <li><a href="#">Booking</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div id="contact-modal" class="modal-overlay">
-        <div class="modal-content">
-            <a href="#!" class="modal-close" aria-label="Close contact form">×</a>
-            <h2>Contact us</h2>
-            <p>Get in touch with Redemption Tones for professional live sound services.</p>
-
-            <form id="contact-form" novalidate>
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email*</label>
-                <input type="text" id="email" name="email" required>
-
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="message">Message*</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit" id="submit">Send Message</button>
-
-                <div id="msg">Message sent!</div>
-            </form>
-        </div>
+    <div class="footer-bottom">
+      <p>© 2026 Redemption Tones. All rights reserved.</p>
     </div>
+  </footer>
 
-    <script>
-        if ("scrollRestoration" in history) {
-            history.scrollRestoration = "manual";
-        }
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <img src="" alt="" />
+  </div>
 
-        window.addEventListener("load", () => {
-            window.scrollTo(0, 0);
-        });
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-content">
+      <a href="#!" class="modal-close" aria-label="Close contact form">×</a>
+      <h2>Contact us</h2>
+      <p>Get in touch with Redemption Tones for professional live sound services.</p>
 
-        // REVEAL + STAGGER
-        const revealElements = document.querySelectorAll(".reveal, .line-reveal");
+      <form id="contact-form" novalidate>
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required />
 
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        }, { threshold: 0.15 });
+        <label for="email">Email*</label>
+        <input type="text" id="email" name="email" required />
 
-        revealElements.forEach((el) => revealObserver.observe(el));
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" />
 
-        const staggerGroups = document.querySelectorAll("[data-stagger]");
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" required></textarea>
 
-        const staggerObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const items = entry.target.querySelectorAll(".stagger-item");
-                    items.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add("visible");
-                        }, index * 120);
-                    });
-                }
-            });
-        }, { threshold: 0.15 });
+        <button type="submit" id="submit">Send Message</button>
+        <div id="msg">Message sent!</div>
+      </form>
+    </div>
+  </div>
 
-        staggerGroups.forEach((group) => staggerObserver.observe(group));
-
-        // MOBILE MENU
-        const menuToggle = document.querySelector(".menu-toggle");
-        const mobileMenu = document.querySelector(".mobile-menu");
-
-        if (menuToggle && mobileMenu) {
-            menuToggle.addEventListener("click", () => {
-                const isOpen = mobileMenu.classList.toggle("open");
-                menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-            });
-        }
-
-        // LIGHTBOX
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = lightbox ? lightbox.querySelector("img") : null;
-        const galleryLinks = document.querySelectorAll(".gallery-link");
-
-        function openLightbox(src, alt) {
-            if (!lightbox || !lightboxImg) return;
-            lightboxImg.src = src;
-            lightboxImg.alt = alt;
-            lightbox.classList.add("active");
-            lightbox.setAttribute("aria-hidden", "false");
-            document.body.classList.add("no-scroll");
-        }
-
-        function closeLightbox() {
-            if (!lightbox || !lightboxImg) return;
-            lightbox.classList.remove("active");
-            lightbox.setAttribute("aria-hidden", "true");
-            lightboxImg.src = "";
-            lightboxImg.alt = "";
-            document.body.classList.remove("no-scroll");
-        }
-
-        galleryLinks.forEach((link) => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                const img = link.querySelector("img");
-                openLightbox(link.href, img ? img.alt : "");
-            });
-        });
-
-        if (lightbox) {
-            lightbox.addEventListener("click", closeLightbox);
-        }
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && lightbox && lightbox.classList.contains("active")) {
-                closeLightbox();
-            }
-        });
-
-        // CONTACT FORM
-        const form = document.getElementById("contact-form");
-        const nameInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
-        const modalClose = document.querySelector(".modal-close");
-        const msgBox = document.getElementById("msg");
-
-        if (form && nameInput && emailInput && messageInput) {
-            [nameInput, emailInput, messageInput].forEach((field) => {
-                field.addEventListener("input", () => {
-                    field.setCustomValidity("");
-                });
-            });
-
-            form.addEventListener("submit", function (e) {
-                if (nameInput.value.trim() === "") {
-                    nameInput.setCustomValidity("Please enter your name.");
-                }
-
-                if (emailInput.value.trim() === "") {
-                    emailInput.setCustomValidity("Please enter your email address.");
-                } else if (!emailInput.value.includes("@")) {
-                    emailInput.setCustomValidity("Please include an '@' in the email address.");
-                } else if (!emailInput.value.includes(".")) {
-                    emailInput.setCustomValidity("Please include a '.' in the email address.");
-                } else if (!emailInput.validity.valid) {
-                    emailInput.setCustomValidity("Please enter a valid email address.");
-                }
-
-                if (messageInput.value.trim() === "") {
-                    messageInput.setCustomValidity("Please enter your message.");
-                }
-
-                if (!form.checkValidity()) {
-                    e.preventDefault();
-                    form.reportValidity();
-                    return;
-                }
-
-                e.preventDefault();
-
-                if (msgBox) {
-                    msgBox.style.display = "block";
-                }
-
-                form.reset();
-            });
-
-            if (modalClose) {
-                modalClose.addEventListener("click", () => {
-                    form.reset();
-
-                    document
-                        .querySelectorAll("#contact-form input, #contact-form textarea")
-                        .forEach((field) => field.setCustomValidity(""));
-
-                    if (msgBox) {
-                        msgBox.style.display = "none";
-                    }
-                });
-            }
-        }
-
-        // GALLERY SLIDER
-        const galleryTrack = document.getElementById("galleryTrack");
-        const leftArrow = document.querySelector(".gallery-arrow-left");
-        const rightArrow = document.querySelector(".gallery-arrow-right");
-        const dots = document.querySelectorAll(".gallery-pictures .dot");
-        const gallerySlider = document.getElementById("gallerySlider");
-
-        let currentPage = 0;
-        let galleryInterval;
-
-        function getItemsPerPage() {
-            if (window.innerWidth <= 768) return 1;
-            if (window.innerWidth <= 900) return 2;
-            return 4;
-        }
-
-        function updateGallerySlider() {
-            if (!galleryTrack || !leftArrow || !rightArrow) return;
-
-            const items = document.querySelectorAll(".gallery-item");
-            if (!items.length) return;
-
-            const itemsPerPage = getItemsPerPage();
-            const totalPages = Math.ceil(items.length / itemsPerPage);
-
-            if (currentPage >= totalPages) currentPage = totalPages - 1;
-            if (currentPage < 0) currentPage = 0;
-
-            const itemWidth = items[0].offsetWidth;
-            const gap = 32;
-            const moveAmount = currentPage * (itemWidth + gap) * itemsPerPage;
-
-            galleryTrack.style.transform = `translateX(-${moveAmount}px)`;
-
-            leftArrow.disabled = currentPage === 0;
-            rightArrow.disabled = currentPage === totalPages - 1;
-
-            dots.forEach((dot, index) => {
-                dot.classList.toggle("active", index === currentPage);
-                dot.style.display = index < totalPages ? "inline-block" : "none";
-            });
-        }
-
-        function nextGalleryPage() {
-            const items = document.querySelectorAll(".gallery-item");
-            const itemsPerPage = getItemsPerPage();
-            const totalPages = Math.ceil(items.length / itemsPerPage);
-
-            currentPage = (currentPage + 1) % totalPages;
-            updateGallerySlider();
-        }
-
-        function startGalleryAutoplay() {
-            stopGalleryAutoplay();
-            galleryInterval = setInterval(nextGalleryPage, 3500);
-        }
-
-        function stopGalleryAutoplay() {
-            clearInterval(galleryInterval);
-        }
-
-        if (leftArrow && rightArrow) {
-            leftArrow.addEventListener("click", () => {
-                currentPage--;
-                updateGallerySlider();
-                startGalleryAutoplay();
-            });
-
-            rightArrow.addEventListener("click", () => {
-                currentPage++;
-                updateGallerySlider();
-                startGalleryAutoplay();
-            });
-        }
-
-        if (gallerySlider) {
-            gallerySlider.addEventListener("mouseenter", stopGalleryAutoplay);
-            gallerySlider.addEventListener("mouseleave", startGalleryAutoplay);
-        }
-
-        window.addEventListener("resize", updateGallerySlider);
-        window.addEventListener("load", () => {
-            updateGallerySlider();
-            startGalleryAutoplay();
-        });
-    </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
