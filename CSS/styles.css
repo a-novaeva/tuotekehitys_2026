@@ -213,7 +213,7 @@ h3 {
 }
 
 p {
-  line-height: 1.7;
+  line-height: 1.5;
 }
 
 /* GLOBAL PAGE LAYOUT */
@@ -249,7 +249,7 @@ main {
 .short-line {
   width: 180px;
   height: 2px;
-  margin: 28px auto 0;
+  margin: 28px auto 28px;
   background: #fff;
 }
 
@@ -282,6 +282,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 1200px;
   padding: 36px 20px;
   text-align: center;
 }
@@ -579,7 +580,7 @@ main {
 /* SERVICES */
 
 .services-page {
-  max-width: 1240px;
+  max-width: 1080px;
 }
 
 .services-grid {
@@ -657,7 +658,7 @@ main {
   list-style: none;
   color: #d0d0d0;
   font-size: clamp(15px, 1.4vw, 17px);
-  line-height: 1.9;
+  line-height: 1.5;
 }
 
 .service-card ul li {
@@ -676,7 +677,7 @@ main {
 /* REFERENCES */
 
 .references-page {
-  max-width: 1240px;
+  max-width: 1040px;
 }
 
 .projects-grid {
@@ -700,6 +701,9 @@ main {
 }
 
 .project-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
@@ -766,7 +770,7 @@ main {
 .references-logo-track {
   display: flex;
   gap: 20px;
-  transition: transform 0.45s ease;
+  transition: opacity 0.6s ease;
   will-change: transform;
 }
 
@@ -777,13 +781,13 @@ main {
 .logo-box {
   width: 100%;
   height: 84px;
-  background: #141414;
-  border: 1px solid #2c2c2c;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  padding: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .logo-box img {
@@ -795,9 +799,7 @@ main {
 .box-stats {
   margin-top: 40px;
   padding: 34px;
-  background: #141414;
-  border: 1px solid #2c2c2c;
-  border-radius: 18px;
+  background: transparent;
 }
 
 /* CTA / FOOTER / MODAL */
@@ -898,8 +900,9 @@ main {
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px;
   background: rgba(0, 0, 0, 0.78);
+  overflow-y: auto;
 }
 
 .modal-overlay:target {
@@ -909,10 +912,10 @@ main {
 .modal-content {
   box-sizing: border-box;
   position: relative;
-  width: 100%;
-  max-width: 680px;
-  margin: auto;
-  padding: 2.2rem;
+  width: min(100%, 620px);
+  max-height: 100vh;
+  margin: 40px auto;
+  padding: 2rem;
   background: #141414;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -923,6 +926,7 @@ main {
     0 0 35px rgba(255, 255, 255, 0.08);
   font-family: 'Inconsolata', monospace;
   text-align: left;
+  overflow-y: auto;
 }
 
 .modal-close {
@@ -970,7 +974,7 @@ textarea {
 }
 
 textarea {
-  min-height: 140px;
+  min-height: 120px;
   resize: vertical;
 }
 
@@ -984,6 +988,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  overflow-y: auto;
 }
 
 button {
