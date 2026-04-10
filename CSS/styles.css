@@ -1132,6 +1132,19 @@ button:hover {
     display: inline-flex;
   }
 
+  .logo-hero,
+  .index-page-content .image {
+    padding: 26px 16px;
+    align-self: start;
+    margin: auto;
+  }
+
+  .logo-hero img,
+  .index-page-content .image img {
+    width: min(80vw, 330px);
+    align-self: start;
+    margin: auto;
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1160,6 +1173,8 @@ button:hover {
   .page-content {
     padding: 28px 16px 64px;
     max-width: 500px;
+    align-items: center;
+    justify-content: center;
   }
 
   .logo-hero {
@@ -1169,11 +1184,15 @@ button:hover {
   .logo-hero,
   .index-page-content .image {
     padding: 26px 16px;
+    align-self: start;
+    margin: auto;
   }
 
   .logo-hero img,
   .index-page-content .image img {
     width: min(80vw, 330px);
+    align-self: start;
+    margin: auto;
   }
 
   .index-page-content .hero-section {
