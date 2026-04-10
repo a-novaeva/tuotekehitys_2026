@@ -199,6 +199,7 @@ function nextGalleryPage() {
   const items = document.querySelectorAll(".gallery-item");
   const itemsPerPage = getItemsPerPage();
   const totalPages = Math.ceil(items.length / itemsPerPage);
+
   currentPage = (currentPage + 1) % totalPages;
   updateGallerySlider();
 }
@@ -232,15 +233,16 @@ if (gallerySlider) {
   gallerySlider.addEventListener("mouseleave", startGalleryAutoplay);
 }
 
-window.addEventListener("resize", updateGallerySlider);
 
 // REFERENCES LOGO SLIDER
 const referencesLogoTrack = document.getElementById("referencesLogoTrack");
 const referencesLogoLeftArrow = document.querySelector(".references-logo-arrow-left");
 const referencesLogoRightArrow = document.querySelector(".references-logo-arrow-right");
 const referencesLogoDots = document.querySelectorAll(".references-logo-dot");
+const referencesLogoSlider = document.getElementById("referencesLogoSlider");
 
 let referencesLogoPage = 0;
+let referencesLogoInterval;
 
 function getReferencesLogoItemsPerPage() {
   if (window.innerWidth <= 768) return 1;
@@ -275,18 +277,45 @@ function updateReferencesLogoSlider() {
   });
 }
 
+function nextReferencesLogoPage() {
+  const items = document.querySelectorAll(".references-logo-item");
+  const itemsPerPage = getReferencesLogoItemsPerPage();
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+
+  referencesLogoPage = (referencesLogoPage + 1) % totalPages;
+  updateReferencesLogoSlider();
+}
+
+function startReferencesLogoAutoplay() {
+  if (!referencesLogoTrack) return;
+  stopReferencesLogoAutoplay();
+  referencesLogoInterval = setInterval(nextReferencesLogoPage, 3000);
+}
+
+function stopReferencesLogoAutoplay() {
+  clearInterval(referencesLogoInterval);
+}
+
 if (referencesLogoLeftArrow && referencesLogoRightArrow) {
   referencesLogoLeftArrow.addEventListener("click", () => {
     referencesLogoPage--;
     updateReferencesLogoSlider();
+    startReferencesLogoAutoplay();
   });
 
   referencesLogoRightArrow.addEventListener("click", () => {
     referencesLogoPage++;
     updateReferencesLogoSlider();
+    startReferencesLogoAutoplay();
   });
 }
 
+if (referencesLogoSlider) {
+  referencesLogoSlider.addEventListener("mouseenter", stopReferencesLogoAutoplay);
+  referencesLogoSlider.addEventListener("mouseleave", startReferencesLogoAutoplay);
+}
+
+// SHARED LOAD + RESIZE
 window.addEventListener("resize", () => {
   updateGallerySlider();
   updateReferencesLogoSlider();
@@ -296,4 +325,5 @@ window.addEventListener("load", () => {
   updateGallerySlider();
   updateReferencesLogoSlider();
   startGalleryAutoplay();
+  startReferencesLogoAutoplay();
 });

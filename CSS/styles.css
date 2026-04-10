@@ -223,6 +223,7 @@ main {
   flex: 1;
   background: #000;
   color: #fff;
+  align-self: center;
 }
 
 .page-content {
@@ -267,37 +268,46 @@ main {
 
 /* HOME */
 
-.index-page-content {
-  padding-top: 24px;
-}
 
 .logo-hero {
-  min-height: 58vh;
+  min-height: calc(100vh - 96px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 24px;
+  text-align: center;
+  max-width: 1200px;
 }
 
 .logo-hero,
 .index-page-content .image {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-self: center;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
-  padding: 36px 20px;
+  max-width: 1000px;
+  padding: 36px 36px;
   text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 40px;
 }
 
 .logo-hero img,
 .index-page-content .image img {
-  width: min(68vw, 620px);
+  width: min(68vw, 660px);
   height: auto;
   margin-bottom: 0;
+  margin-top: -100px;
+  max-width: 1000px;
 }
 
 .index-page-content .hero-section {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   width: 100%;
   padding: 0 24px 20px;
 }
@@ -312,14 +322,14 @@ main {
 
 .hero-container img {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   height: auto;
   margin: 18px 0 12px;
 }
 
 .hero-container .button-wrapper {
-  margin-top: -72px;
-  margin-bottom: 12px;
+  margin-top: -182px;
+  margin-bottom: 42px;
 }
 
 /* HOME LOGOS */
@@ -327,7 +337,7 @@ main {
 .logo-showcase,
 .logo-marquee-section {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 12px 24px 22px;
   text-align: center;
@@ -366,9 +376,10 @@ main {
 
 .gallery-section {
   width: 100%;
-  max-width: 1400px;
+  
   margin: 0 auto;
   padding: 18px 24px 28px;
+  align-items: center;
 }
 
 .gallery-slider {
@@ -379,15 +390,34 @@ main {
 }
 
 .gallery-viewport {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   overflow: hidden;
 }
+
+.gallery-arrow,
+.references-logo-arrow {
+  flex: 0 0 40px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 42px;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+
 
 .gallery-container {
   display: flex;
   gap: 24px;
-  transition: transform 0.45s ease;
+  transition: transform 0.55s ease;
   will-change: transform;
+  max-width: 1400px;
 }
 
 .gallery-item {
@@ -437,19 +467,7 @@ main {
   text-align: center;
 }
 
-.gallery-arrow,
-.references-logo-arrow {
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 42px;
-  line-height: 1;
-  width: auto;
-  height: auto;
-  padding: 0;
-  cursor: pointer;
-  box-shadow: none;
-}
+
 
 .gallery-arrow:disabled,
 .references-logo-arrow:disabled {
@@ -770,7 +788,7 @@ main {
 .references-logo-track {
   display: flex;
   gap: 20px;
-  transition: opacity 0.6s ease;
+  transition: transform 0.45s ease;
   will-change: transform;
 }
 
@@ -1141,6 +1159,7 @@ button:hover {
 @media (max-width: 768px) {
   .page-content {
     padding: 28px 16px 64px;
+    max-width: 500px;
   }
 
   .logo-hero {
@@ -1172,7 +1191,8 @@ button:hover {
   }
 
   .cta-button {
-    min-width: 200px;
+    width: 150px;
+    align-self: center;
   }
 
   .line.full-line,
@@ -1202,8 +1222,10 @@ button:hover {
   }
 
   .gallery-item img {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 4;
     border-radius: 18px;
+    padding: 24px 20px;
+
   }
 
   .gallery-caption {
