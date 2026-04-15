@@ -332,6 +332,42 @@ main {
   margin-bottom: 42px;
 }
 
+.hero-info-box {
+  width: min(100%, 1080px);
+  margin: -140px auto 42px;
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 24px;
+  align-items: center;
+  background: rgba(36, 36, 36, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+}
+
+.hero-info-text h1 {
+  margin: 0;
+  text-align: left;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1.08;
+  color: #e8e8e8;
+  font-weight: 700;
+}
+
+.hero-info-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.hero-info-actions .cta-button {
+  min-width: 180px;
+}
+
 /* HOME LOGOS */
 
 .logo-showcase,
@@ -1213,6 +1249,29 @@ button:hover {
     width: 150px;
     align-self: center;
   }
+
+  .hero-info-box {
+    margin: -64px auto 24px;
+    padding: 18px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    border-radius: 18px;
+  }
+
+  .hero-info-text h1 {
+    text-align: left;
+    font-size: 22px;
+    line-height: 1.15;
+  }
+
+  .hero-info-actions {
+    width: 100%;
+  }
+
+  .hero-info-actions .cta-button {
+    width: 100%;
+  }
+
 
   .line.full-line,
   .section-divider {
