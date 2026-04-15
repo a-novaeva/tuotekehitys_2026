@@ -128,13 +128,10 @@ if (form && nameInput && emailInput && messageInput) {
       return;
     }
 
-    e.preventDefault();
-
     if (msgBox) {
       msgBox.style.display = "block";
+      msgBox.textContent = "Sending...";
     }
-
-    form.reset();
   });
 
   if (modalClose) {
