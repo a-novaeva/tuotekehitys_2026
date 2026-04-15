@@ -1181,6 +1181,7 @@ button:hover {
     width: min(80vw, 330px);
     align-self: start;
     margin: auto;
+  }
 
   .footer-container {
     grid-template-columns: 1fr;
@@ -1273,7 +1274,6 @@ button:hover {
     width: 100%;
   }
 
-
   .line.full-line,
   .section-divider {
     width: 90%;
@@ -1304,7 +1304,6 @@ button:hover {
     aspect-ratio: 4 / 4;
     border-radius: 18px;
     padding: 24px 20px;
-
   }
 
   .gallery-caption {
@@ -1376,7 +1375,6 @@ button:hover {
     max-width: 140px;
   }
 
-
   .footer-links ul {
     display: flex;
     flex-direction: column;
@@ -1391,5 +1389,4 @@ button:hover {
   .footer-links a {
     display: inline-block;
   }
-}
 }
