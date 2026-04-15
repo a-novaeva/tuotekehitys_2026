@@ -290,9 +290,8 @@ main {
   max-width: 1000px;
   padding: 36px 36px;
   text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo-hero img,
