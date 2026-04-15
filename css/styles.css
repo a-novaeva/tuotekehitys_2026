@@ -204,7 +204,7 @@ h1 {
   color: #fff;
   font-family: 'Inconsolata', monospace;
   font-size: clamp(32px, 4vw, 56px);
-  font-weight: 700;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -351,7 +351,7 @@ main {
   grid-template-columns: 1.4fr auto;
   gap: 24px;
   align-items: center;
-  background: rgba(36, 36, 36, 0.72);
+  background: rgba(22, 22, 22, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 22px;
   backdrop-filter: blur(10px);
