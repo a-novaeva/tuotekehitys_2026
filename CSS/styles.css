@@ -1361,5 +1361,32 @@ button:hover {
     padding: 14px;
     font-size: 16px;
   }
-}
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    max-width: 140px;
+  }
+
+
+  .footer-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footer-links li {
+    list-style: none;
+  }
+
+  .footer-links a {
+    display: inline-block;
+  }
 }
