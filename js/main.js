@@ -88,66 +88,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// CONTACT FORM
-const form = document.getElementById("contact-form");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const messageInput = document.getElementById("message");
-const modalClose = document.querySelector(".modal-close");
-const msgBox = document.getElementById("msg");
 
-if (form && nameInput && emailInput && messageInput) {
-  [nameInput, emailInput, messageInput].forEach((field) => {
-    field.addEventListener("input", () => {
-      field.setCustomValidity("");
-    });
-  });
-
-  form.addEventListener("submit", function (e) {
-    if (nameInput.value.trim() === "") {
-      nameInput.setCustomValidity("Please enter your name.");
-    }
-
-    if (emailInput.value.trim() === "") {
-      emailInput.setCustomValidity("Please enter your email address.");
-    } else if (!emailInput.value.includes("@")) {
-      emailInput.setCustomValidity("Please include an '@' in the email address.");
-    } else if (!emailInput.value.includes(".")) {
-      emailInput.setCustomValidity("Please include a '.' in the email address.");
-    } else if (!emailInput.validity.valid) {
-      emailInput.setCustomValidity("Please enter a valid email address.");
-    }
-
-    if (messageInput.value.trim() === "") {
-      messageInput.setCustomValidity("Please enter your message.");
-    }
-
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      form.reportValidity();
-      return;
-    }
-
-    if (msgBox) {
-      msgBox.style.display = "block";
-      msgBox.textContent = "Sending...";
-    }
-  });
-
-  if (modalClose) {
-    modalClose.addEventListener("click", () => {
-      form.reset();
-
-      document
-        .querySelectorAll("#contact-form input, #contact-form textarea")
-        .forEach((field) => field.setCustomValidity(""));
-
-      if (msgBox) {
-        msgBox.style.display = "none";
-      }
-    });
-  }
-}
 
 // HOME GALLERY SLIDER
 const galleryTrack = document.getElementById("galleryTrack");
