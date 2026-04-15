@@ -217,22 +217,30 @@
       <h2>Contact us</h2>
       <p>Get in touch with Redemption Tones for professional live sound services.</p>
 
-      <form action="https://formspree.io/f/xaqaqqwr" method="POST">
+      <div data-fs-success class="form-success"></div>
+      <div data-fs-error class="form-error"></div>
+
+      <form id="contact-form">
         <input type="hidden" name="_subject" value="New website contact form submission" />
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
         <label for="name">Name*</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required data-fs-field />
+        <span data-fs-error="name"></span>
 
         <label for="email">Email*</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required data-fs-field />
+        <span data-fs-error="email"></span>
 
         <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" />
+        <input type="tel" id="phone" name="phone" data-fs-field />
+        <span data-fs-error="phone"></span>
 
         <label for="message">Message*</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" required data-fs-field></textarea>
+        <span data-fs-error="message"></span>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" data-fs-submit-btn>Send Message</button>
       </form>
     </div>
   </div>
