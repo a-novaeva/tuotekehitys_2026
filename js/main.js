@@ -230,7 +230,6 @@ if (gallerySlider) {
   gallerySlider.addEventListener("mouseleave", startGalleryAutoplay);
 }
 
-
 // REFERENCES LOGO SLIDER
 const referencesLogoTrack = document.getElementById("referencesLogoTrack");
 const referencesLogoLeftArrow = document.querySelector(".references-logo-arrow-left");
