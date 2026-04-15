@@ -88,7 +88,77 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// CLOSE MODAL CLEANUP
+const modalClose = document.querySelector(".modal-close");
 
+if (modalClose) {
+  modalClose.addEventListener("click", () => {
+    const form = document.getElementById("contact-form");
+    const successBox = document.querySelector("[data-fs-success]");
+    const errorBox = document.querySelector("[data-fs-error]");
+
+    if (form) {
+      form.reset();
+    }
+
+    document
+      .querySelectorAll("#contact-form input, #contact-form textarea")
+      .forEach((field) => {
+        field.removeAttribute("aria-invalid");
+      });
+
+    document
+      .querySelectorAll("[data-fs-error]")
+      .forEach((field) => {
+        if (field !== errorBox && field !== successBox) {
+          field.textContent = "";
+        }
+      });
+
+    if (successBox) {
+      successBox.textContent = "";
+    }
+
+    if (errorBox) {
+      errorBox.textContent = "";
+    }
+  });
+}
+
+// FORMSPREE AJAX CONTACT FORM
+window.addEventListener("load", () => {
+  if (!document.getElementById("contact-form")) return;
+  if (typeof window.formspree !== "function") return;
+
+  window.formspree("initForm", {
+    formElement: "#contact-form",
+    formId: "xaqaqqwr",
+    onSuccess: function () {
+      const modal = document.getElementById("contact-modal");
+      const form = document.getElementById("contact-form");
+      const successBox = document.querySelector("[data-fs-success]");
+      const errorBox = document.querySelector("[data-fs-error]");
+
+      if (errorBox) {
+        errorBox.textContent = "";
+      }
+
+      if (successBox) {
+        successBox.textContent = "Thanks! Your message has been sent.";
+      }
+
+      if (form) {
+        form.reset();
+      }
+
+      setTimeout(() => {
+        if (modal) {
+          window.location.hash = "!";
+        }
+      }, 1500);
+    }
+  });
+});
 
 // HOME GALLERY SLIDER
 const galleryTrack = document.getElementById("galleryTrack");
