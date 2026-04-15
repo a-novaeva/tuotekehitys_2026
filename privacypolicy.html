@@ -245,6 +245,31 @@
     </div>
   </div>
 
+ <script>
+    window.formspree =
+      window.formspree ||
+      function () {
+        (formspree.q = formspree.q || []).push(arguments);
+      };
+
+    formspree('initForm', {
+      formElement: '#contact-form',
+      formId: 'xaqaqqwr',
+      onSuccess: function () {
+        const form = document.getElementById('contact-form');
+        const successBox = document.querySelector('[data-fs-success]');
+        const errorBox = document.querySelector('[data-fs-error]');
+
+        if (errorBox) errorBox.textContent = '';
+        if (successBox) successBox.textContent = 'Thanks! Your message has been sent.';
+        if (form) form.reset();
+
+        setTimeout(() => {
+          window.location.hash = '!';
+        }, 1500);
+      }
+    });
+  </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
   <script src="./js/main.js" defer></script>
 </body>

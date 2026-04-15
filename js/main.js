@@ -125,32 +125,6 @@ if (modalClose) {
   });
 }
 
-// FORMSPREE AJAX CONTACT FORM
-window.addEventListener("load", () => {
-  const form = document.getElementById("contact-form");
-  if (!form) return;
-  if (typeof window.formspree !== "function") return;
-
-  window.formspree("initForm", {
-    formElement: "#contact-form",
-    formId: "xaqaqqwr",
-    onSuccess: function () {
-      const modal = document.getElementById("contact-modal");
-      const successBox = document.querySelector("[data-fs-success]");
-      const errorBox = document.querySelector("[data-fs-error]");
-
-      if (errorBox) errorBox.textContent = "";
-      if (successBox) successBox.textContent = "Thanks! Your message has been sent.";
-
-      form.reset();
-
-      setTimeout(() => {
-        window.location.hash = "!";
-      }, 1500);
-    }
-  });
-});
-
 // HOME GALLERY SLIDER
 const galleryTrack = document.getElementById("galleryTrack");
 const leftArrow = document.querySelector(".gallery-arrow-left");
