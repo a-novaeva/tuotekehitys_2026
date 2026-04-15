@@ -127,7 +127,8 @@ if (modalClose) {
 
 // FORMSPREE AJAX CONTACT FORM
 window.addEventListener("load", () => {
-  if (!document.getElementById("contact-form")) return;
+  const form = document.getElementById("contact-form");
+  if (!form) return;
   if (typeof window.formspree !== "function") return;
 
   window.formspree("initForm", {
@@ -135,26 +136,16 @@ window.addEventListener("load", () => {
     formId: "xaqaqqwr",
     onSuccess: function () {
       const modal = document.getElementById("contact-modal");
-      const form = document.getElementById("contact-form");
       const successBox = document.querySelector("[data-fs-success]");
       const errorBox = document.querySelector("[data-fs-error]");
 
-      if (errorBox) {
-        errorBox.textContent = "";
-      }
+      if (errorBox) errorBox.textContent = "";
+      if (successBox) successBox.textContent = "Thanks! Your message has been sent.";
 
-      if (successBox) {
-        successBox.textContent = "Thanks! Your message has been sent.";
-      }
-
-      if (form) {
-        form.reset();
-      }
+      form.reset();
 
       setTimeout(() => {
-        if (modal) {
-          window.location.hash = "!";
-        }
+        window.location.hash = "!";
       }, 1500);
     }
   });
