@@ -218,15 +218,28 @@ h2 {
   text-align: center;
 }
 
-h2.box {
-  margin: 0 0 18px;
+h2.box-head {
+  margin: 0 0 6px;
   padding: 0;
   color: #fff;
   font-family: 'Inconsolata', monospace;
-  font-size: clamp(22px, 2vw, 32px);
-  font-weight: 400;
+  font-size: clamp(28px, 2.6vw, 40px);
+  font-weight: 700;
+  line-height: 1.05;
   text-align: left;
-  margin-left: 22px;
+  
+}
+
+h2.box {
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Inconsolata', monospace;
+  font-size: clamp(18px, 1.6vw, 26px);
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: left;
+  max-width: 22ch;
 }
 
 h3 {
@@ -294,12 +307,15 @@ main {
 .logo-hero {
   min-height: calc(100vh - 96px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: clamp(20px, 3vw, 42px);
   width: 100%;
   padding: 32px 24px;
   text-align: center;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo-hero,
@@ -320,8 +336,7 @@ main {
 .index-page-content .image img {
   width: min(68vw, 660px);
   height: auto;
-  margin-bottom: 0;
-  margin-top: -100px;
+  margin: 0;
   max-width: 1000px;
 }
 
@@ -354,19 +369,19 @@ main {
 }
 
 .hero-info-box {
-  width: min(100%, 1080px);
-  margin: -140px auto 42px;
-  padding: 22px 28px;
+  width: min(100%, 980px);
+  margin: -115px auto 42px;
+  padding: 28px 32px;
   display: grid;
-  grid-template-columns: 1.4fr auto;
-  gap: 24px;
+  grid-template-columns: 1.6fr auto;
+  gap: 28px;
   align-items: center;
-  background: rgba(22, 22, 22, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 22px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  background: rgba(10, 10, 12, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
 .hero-info-actions {
@@ -377,7 +392,9 @@ main {
 }
 
 .hero-info-actions .cta-button {
-  min-width: 180px;
+  min-width: 170px;
+  min-height: 50px;
+  padding: 12px 24px;
 }
 
 /* HOME LOGOS */
@@ -1191,6 +1208,20 @@ button:hover {
     margin: auto;
   }
 
+  .hero-info-actions {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-info-actions .cta-button {
+    width: 100%;
+    max-width: 420px;
+    min-height: 48px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1268,17 +1299,42 @@ button:hover {
     border-radius: 18px;
   }
 
-  .hero-info-text h1 {
-    text-align: left;
-    font-size: 22px;
-    line-height: 1.15;
+  .hero-info-text,
+  .hero-info-actions {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  h2.box-head,
+  h2.box {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  h2.box-head {
+    margin-bottom: 16px;
+    font-size: 28px;
+    line-height: 1.08;
+    margin-top: 16px;
+  }
+
+  h2.box {
+    font-size: 18px;
+    line-height: 1.2;
+    max-width: none;
+    margin-bottom: 22px;
   }
 
   .hero-info-actions {
     width: 100%;
+    gap: 12px;
   }
 
   .hero-info-actions .cta-button {
+    min-height: 46px;
+    padding: 10px 18px;
+    font-size: 15px;
     width: 100%;
   }
 
