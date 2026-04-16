@@ -190,11 +190,11 @@ button,
 h1.logo {
   font-family: 'Inconsolata', monospace;
   font-weight: 300;
-  font-size: 28px;
+  font-size: clamp(14px, 2.2vw, 28px);
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.1em;
-  margin-top: 80px;
+  margin-top: 60px;
   text-align: center;
 }
 
@@ -291,7 +291,6 @@ main {
 
 /* HOME */
 
-
 .logo-hero {
   min-height: calc(100vh - 96px);
   display: flex;
@@ -369,8 +368,6 @@ main {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
 }
-
-
 
 .hero-info-actions {
   display: flex;
@@ -492,6 +489,7 @@ main {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 22px;
+  padding: 0;
 }
 
 .gallery-item:hover {
@@ -569,7 +567,6 @@ main {
   border-radius: 16px;
   background: #000;
 }
-
 
 /* ABOUT */
 
@@ -1312,9 +1309,9 @@ button:hover {
   }
 
   .gallery-item img {
-    aspect-ratio: 4 / 4;
+    aspect-ratio: 1 / 1;
     border-radius: 18px;
-    padding: 24px 20px;
+    padding: 0;
   }
 
   .gallery-caption {
