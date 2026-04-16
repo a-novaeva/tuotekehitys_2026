@@ -370,14 +370,7 @@ main {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
 }
 
-.hero-info-text h1 {
-  margin: 0;
-  text-align: left;
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: 1.08;
-  color: #e8e8e8;
-  font-weight: 700;
-}
+
 
 .hero-info-actions {
   display: flex;
