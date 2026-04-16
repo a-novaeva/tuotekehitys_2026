@@ -190,7 +190,7 @@ button,
 h1.logo {
   font-family: 'Inconsolata', monospace;
   font-weight: 300;
-  font-size: clamp(14px, 2.2vw, 28px);
+  font-size: clamp(12px, 1.4vw, 22px);
   text-transform: uppercase;
   color: #fff;
   letter-spacing: 0.1em;
@@ -310,7 +310,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(20px, 3vw, 42px);
+  gap: clamp(14px, 2vw, 28px);
   width: 100%;
   padding: 32px 24px;
   text-align: center;
@@ -334,7 +334,7 @@ main {
 
 .logo-hero img,
 .index-page-content .image img {
-  width: min(68vw, 660px);
+  width: clamp(220px, 34vw, 560px);
   height: auto;
   margin: 0;
   max-width: 1000px;
