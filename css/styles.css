@@ -427,7 +427,6 @@ main {
 
 .gallery-section {
   width: 100%;
-  
   margin: 0 auto;
   padding: 18px 24px 28px;
   align-items: center;
@@ -461,14 +460,11 @@ main {
   box-shadow: none;
 }
 
-
-
 .gallery-container {
   display: flex;
   gap: 24px;
   transition: transform 0.55s ease;
   will-change: transform;
-  max-width: 1400px;
 }
 
 .gallery-item {
@@ -477,6 +473,7 @@ main {
   transition: transform 0.25s ease;
   border-radius: 22px;
   overflow: hidden;
+  background: #111;
 }
 
 .gallery-link {
@@ -516,9 +513,8 @@ main {
   font-size: 18px;
   line-height: 1.35;
   text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
 }
-
-
 
 .gallery-arrow:disabled,
 .references-logo-arrow:disabled {
@@ -573,6 +569,7 @@ main {
   border-radius: 16px;
   background: #000;
 }
+
 
 /* ABOUT */
 
